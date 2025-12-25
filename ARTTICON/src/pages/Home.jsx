@@ -169,8 +169,8 @@ export default function Home() {
                 
                 <div className="mt-6 pt-6 border-t border-white/20">
                   <div className="text-center text-white">
-                    <p className="text-sm text-gray-200 mb-2">Early Bird Registration</p>
-                    <p className="text-xl font-bold text-cyan-300">Ends Dec 31, 2025</p>
+                    <p className="text-sm text-gray-200 mb-2">Registration</p>
+                    <p className="text-xl font-bold text-cyan-300">Ends 28 Feb, 2026</p>
                   </div>
                 </div>
               </div>
@@ -192,7 +192,7 @@ export default function Home() {
           {/* Conference Theme Title */}
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-600 text-sm font-medium mb-6">
-              📍 Rishikesh, Uttarakhand • February 14-16, 2026
+              📍Atal Bihari Vajpayee auditorium AIIMS  Rishikesh, Uttarakhand • 25 to 27 sep , 2026
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               Revolutionizing Radiotherapy:
