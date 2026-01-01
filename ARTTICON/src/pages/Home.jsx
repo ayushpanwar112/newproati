@@ -6,6 +6,8 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Hero } from '../components/Hero/Hero'
 import  img10 from '../assets/Gallery/img10.jpg'
+import ConferenceScheduleSection from '../components/Hero/ConferenceScheduleSection'
+import visionImage from '../assets/vision.jpg'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -34,9 +36,32 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               Revolutionizing Radiotherapy:
             </h2>
-            <p className="text-2xl lg:text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600 mb-6">
-              From Vision to Precision
-            </p>
+
+
+            {/* <div className="inline-block mb-8 w-full h-48 ">
+  <div className="bg-gradient-to-r from-[#3787c8] via-[#45AAFF] w-full h-48   flex flex-col justify-center items-center to-[#3787c8] py-4 rounded-xl shadow-lg">
+    <p className="text-3xl lg:text-4xl font-bold text-white tracking-wide">
+      From Vision to Precision
+    </p>
+  </div>
+</div> */}
+<div className="inline-block mb-8 w-full h-48 relative">
+  
+  <div
+    className="absolute inset-0 rounded-xl bg-center bg-cover"
+  style={{ backgroundImage: `url(${visionImage})` }}
+  />
+
+  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#3787c8]/90 via-[#45AAFF]/85 to-[#3787c8]/90" />
+
+  <div className="relative z-10 w-full h-full flex items-center justify-center shadow-lg rounded-xl">
+    <p className="text-3xl lg:text-4xl font-bold text-white tracking-wide">
+      From Vision to Precision
+    </p>
+  </div>
+
+</div>
+
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mx-auto mb-8"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Join leading radiation therapy professionals as we explore cutting-edge technologies, 
@@ -112,7 +137,7 @@ export default function Home() {
       </section>
 
       {/* Schedule Preview */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Conference Schedule</h2>
@@ -174,7 +199,8 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+      <ConferenceScheduleSection />
 
     <section
   className="py-20 bg-cover bg-center relative"

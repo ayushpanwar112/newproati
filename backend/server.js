@@ -4,7 +4,8 @@ import helmet from 'helmet'
 import morgan from 'morgan'
 import dotenv from 'dotenv'
 import { connectDB } from './config/db.js'
-import registrationRoutes from './routes/registrationRoutes.js'
+import registrationRoutes from './src/routes/registrationRoutes.js'
+import { errorMiddleware } from './src/utils/error.js'
 
 dotenv.config()
 
@@ -17,6 +18,7 @@ app.use(cors({ origin: true }))
 app.use(express.json())
 app.use(morgan('dev'))
 
+
 // Health check
 app.get('/health', (_req, res) => {
   res.send({ status: 'ok', uptime: process.uptime() })
@@ -28,6 +30,9 @@ app.use('/form', registrationRoutes)
 app.get("/", (req, res) => {
   res.send("Hello from server ");
 });
+
+
+app.use(errorMiddleware);
 
 
 // Start server after DB connects
