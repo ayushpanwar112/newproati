@@ -4,14 +4,20 @@ const registrationSchema = new mongoose.Schema(
   {
     name: { type: String, required: true, trim: true },
     password: { type: String, required: true, select: false }, // 'select: false' hides password by default
-
-    email: { type: String, required: true, trim: true, lowercase: true },
-    organization: { type: String, required: true, trim: true },
+    instituation: { type: String, required: true, trim: true },
+    country: { type: String, required: true, trim: true },
+    state: { type: String, required: true, trim: true },
+    city: { type: String, required: true, trim: true },
+    foodper: { type: String, required: true, trim: true },
     phone: { type: String, trim: true },
+    altphone: { type: String, trim: true },
+    cate: { type: String, required: true, trim: true },
+    regFee: { type: String, required: true, trim: true },
+    paymentmode: { type: String, required: true, trim: true },
+    trnsNo: { type: String, required: true, trim: true },
+    paymentScreenshotUrl: { type: String, trim: true },
+    email: { type: String, required: true, trim: true, lowercase: true },
     designation: { type: String, required: true },
-    experience: { type: String },
-    specialization: { type: String },
-    refreshToken: { type: String }, // Store session token
   },
   { timestamps: true }
 );

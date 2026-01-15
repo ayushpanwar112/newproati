@@ -1,24 +1,71 @@
 import { Registration } from "../models/Registration.js"
+import bcrypt from 'bcryptjs'
 
 export async function createRegistration(req, res) {
   try {
-    const { name, email, organization, phone, designation, experience, specialization } = req.body || {}
+    const {
+      name,
+      email,
+      password,
+      instituation,
+      country,
+      state,
+      city,
+      foodper,
+      phone,
+      altphone,
+      cate,
+      regFee,
+      paymentmode,
+      trnsNo,
+      designation,
+    } = req.body || {}
 
-    if (!name || !email || !organization || !designation) {
-      return res.status(400).json({ error: 'Missing required fields' })
+    const missing = []
+    if (!name) missing.push('name')
+    if (!email) missing.push('email')
+    if (!password) missing.push('password')
+    if (!instituation) missing.push('instituation')
+    if (!country) missing.push('country')
+    if (!state) missing.push('state')
+    if (!city) missing.push('city')
+    if (!foodper) missing.push('foodper')
+    if (!cate) missing.push('cate')
+    if (!regFee) missing.push('regFee')
+    if (!paymentmode) missing.push('paymentmode')
+    if (!trnsNo) missing.push('trnsNo')
+    if (!designation) missing.push('designation')
+
+    if (missing.length) {
+      return res.status(400).json({ error: `Missing required fields: ${missing.join(', ')}` })
     }
+
+    const passwordHash = await bcrypt.hash(String(password), 10)
+
+    const paymentScreenshotUrl = req.file
+      ? `/uploads/payments/${req.file.filename}`
+      : undefined
 
     const doc = await Registration.create({
       name,
       email,
-      organization,
+      password: passwordHash,
+      instituation,
+      country,
+      state,
+      city,
+      foodper,
       phone,
+      altphone,
+      cate,
+      regFee,
+      paymentmode,
+      trnsNo,
+      paymentScreenshotUrl,
       designation,
-      experience,
-      specialization
     })
 
-    return res.status(201).json({ message: 'Registered successfully', id: doc._id })
+    return res.status(201).json({ message: 'Registered successfully', id: doc._id, paymentScreenshotUrl })
   } catch (err) {
     console.error('Registration error:', err)
     const code = err?.code === 11000 ? 409 : 500

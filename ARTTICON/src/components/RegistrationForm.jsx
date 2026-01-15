@@ -3,7 +3,24 @@ import { useNavigate } from 'react-router-dom'
 import { gsap } from 'gsap'
 
 export default function RegistrationForm() {
-  const [form, setForm] = useState({ name: '', email: '', organization: '', phone: '', designation: '', experience: '', specialization: '' })
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    password: '',
+    instituation: '',
+    country: '',
+    state: '',
+    city: '',
+    foodper: '',
+    phone: '',
+    altphone: '',
+    cate: '',
+    regFee: '',
+    paymentmode: '',
+    trnsNo: '',
+    designation: '',
+  })
+  const [screenshotFile, setScreenshotFile] = useState(null)
   const [status, setStatus] = useState(null)
   const formRef = useRef()
   const navigate = useNavigate()
@@ -18,15 +35,37 @@ export default function RegistrationForm() {
     e.preventDefault()
     setStatus('sending')
     try {
+      const body = new FormData()
+      Object.entries(form).forEach(([key, value]) => {
+        body.append(key, value ?? '')
+      })
+      if (screenshotFile) body.append('screenshot', screenshotFile)
+
       const res = await fetch('http://localhost:4000/form/register', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form)
+        body
       })
       const data = await res.json()
       if (res.ok) {
         setStatus('submitted')
-        setForm({ name: '', email: '', organization: '', phone: '', designation: '', experience: '', specialization: '' })
+        setForm({
+          name: '',
+          email: '',
+          password: '',
+          instituation: '',
+          country: '',
+          state: '',
+          city: '',
+          foodper: '',
+          phone: '',
+          altphone: '',
+          cate: '',
+          regFee: '',
+          paymentmode: '',
+          trnsNo: '',
+          designation: '',
+        })
+        setScreenshotFile(null)
         setTimeout(() => navigate('/'), 1200)
       } else {
         setStatus(data.error || 'error')
@@ -39,6 +78,11 @@ export default function RegistrationForm() {
   return (
     <div className="max-w-2xl mx-auto">
       <form ref={formRef} className="bg-white p-10 rounded-3xl shadow-2xl space-y-8 border border-gray-100" onSubmit={submit}>
+        <div className="p-6 bg-gradient-to-r from-teal-50 to-emerald-50 rounded-2xl border border-teal-100">
+          <h3 className="text-lg font-semibold text-gray-900 mb-1">Participant Details</h3>
+          <p className="text-sm text-gray-600">Fields marked * are required.</p>
+        </div>
+
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
           <input 
@@ -64,26 +108,51 @@ export default function RegistrationForm() {
           />
         </div>
 
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Create Password *</label>
+          <input
+            name="password"
+            type="password"
+            value={form.password}
+            onChange={update}
+            required
+            minLength={6}
+            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:ring-4 focus:ring-teal-200 focus:border-teal-400 transition-all duration-300 bg-white"
+            placeholder="Minimum 6 characters"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Institution / Hospital *</label>
+          <input
+            name="instituation"
+            value={form.instituation}
+            onChange={update}
+            required
+            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:ring-4 focus:ring-teal-200 focus:border-teal-400 transition-all duration-300 bg-white"
+            placeholder="Enter your institution"
+          />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Hospital/Institution *</label>
-            <input 
-              name="organization" 
-              value={form.organization} 
-              onChange={update} 
-              required
+            <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+            <input
+              name="phone"
+              value={form.phone}
+              onChange={update}
               className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:ring-4 focus:ring-teal-200 focus:border-teal-400 transition-all duration-300 bg-white"
-              placeholder="Your hospital or medical institution"
+              placeholder="Your phone number"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-            <input 
-              name="phone" 
-              value={form.phone} 
-              onChange={update} 
+            <label className="block text-sm font-medium text-gray-700 mb-1">Alternate Phone</label>
+            <input
+              name="altphone"
+              value={form.altphone}
+              onChange={update}
               className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:ring-4 focus:ring-teal-200 focus:border-teal-400 transition-all duration-300 bg-white"
-              placeholder="Your phone number"
+              placeholder="Alternate phone (optional)"
             />
           </div>
         </div>
@@ -110,41 +179,138 @@ export default function RegistrationForm() {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Years of Experience</label>
-            <select 
-              name="experience" 
-              value={form.experience} 
-              onChange={update} 
+            <label className="block text-sm font-medium text-gray-700 mb-1">Participant Category *</label>
+            <select
+              name="cate"
+              value={form.cate}
+              onChange={update}
+              required
               className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:ring-4 focus:ring-teal-200 focus:border-teal-400 transition-all duration-300 bg-white"
             >
-              <option value="">Select experience</option>
-              <option value="0-2">0-2 years</option>
-              <option value="3-5">3-5 years</option>
-              <option value="6-10">6-10 years</option>
-              <option value="11-15">11-15 years</option>
-              <option value="15+">15+ years</option>
+              <option value="">Select category</option>
+              <option value="student">Student</option>
+              <option value="delegate">Delegate</option>
+              <option value="faculty">Faculty</option>
+              <option value="other">Other</option>
             </select>
           </div>
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Area of Specialization</label>
-          <select 
-            name="specialization" 
-            value={form.specialization} 
-            onChange={update} 
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:ring-4 focus:ring-teal-200 focus:border-teal-400 transition-all duration-300 bg-white"
-          >
-            <option value="">Select specialization (optional)</option>
-            <option value="external_beam">External Beam Radiation Therapy</option>
-            <option value="brachytherapy">Brachytherapy</option>
-            <option value="stereotactic">Stereotactic Radiosurgery/Radiotherapy</option>
-            <option value="pediatric">Pediatric Radiation Therapy</option>
-            <option value="treatment_planning">Treatment Planning</option>
-            <option value="quality_assurance">Quality Assurance & Safety</option>
-            <option value="research">Research & Development</option>
-            <option value="general">General Practice</option>
-          </select>
+        <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm space-y-6">
+          <h3 className="text-lg font-semibold text-gray-900">Location</h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Country *</label>
+              <input
+                name="country"
+                value={form.country}
+                onChange={update}
+                required
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:ring-4 focus:ring-teal-200 focus:border-teal-400 transition-all duration-300 bg-white"
+                placeholder="Country"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">State *</label>
+              <input
+                name="state"
+                value={form.state}
+                onChange={update}
+                required
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:ring-4 focus:ring-teal-200 focus:border-teal-400 transition-all duration-300 bg-white"
+                placeholder="State"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">City *</label>
+              <input
+                name="city"
+                value={form.city}
+                onChange={update}
+                required
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:ring-4 focus:ring-teal-200 focus:border-teal-400 transition-all duration-300 bg-white"
+                placeholder="City"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm space-y-6">
+          <h3 className="text-lg font-semibold text-gray-900">Food & Payment</h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Food Preference *</label>
+              <select
+                name="foodper"
+                value={form.foodper}
+                onChange={update}
+                required
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:ring-4 focus:ring-teal-200 focus:border-teal-400 transition-all duration-300 bg-white"
+              >
+                <option value="">Select preference</option>
+                <option value="veg">Vegetarian</option>
+                <option value="nonveg">Non-Vegetarian</option>
+                <option value="jain">Jain</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Registration Fee *</label>
+              <input
+                name="regFee"
+                value={form.regFee}
+                onChange={update}
+                required
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:ring-4 focus:ring-teal-200 focus:border-teal-400 transition-all duration-300 bg-white"
+                placeholder="e.g. 2500"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Payment Mode *</label>
+              <select
+                name="paymentmode"
+                value={form.paymentmode}
+                onChange={update}
+                required
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:ring-4 focus:ring-teal-200 focus:border-teal-400 transition-all duration-300 bg-white"
+              >
+                <option value="">Select payment mode</option>
+                <option value="upi">UPI</option>
+                <option value="card">Card</option>
+                <option value="netbanking">Net Banking</option>
+                <option value="cash">Cash</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Transaction No. *</label>
+              <input
+                name="trnsNo"
+                value={form.trnsNo}
+                onChange={update}
+                required
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:ring-4 focus:ring-teal-200 focus:border-teal-400 transition-all duration-300 bg-white"
+                placeholder="Enter transaction reference"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Payment Screenshot (optional)</label>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => setScreenshotFile(e.target.files?.[0] || null)}
+              className="w-full px-4 py-3 border-2 border-dashed border-gray-200 rounded-xl shadow-sm focus:ring-4 focus:ring-teal-200 focus:border-teal-400 transition-all duration-300 bg-white"
+            />
+            {screenshotFile && (
+              <p className="mt-2 text-sm text-gray-600">Selected: <span className="font-medium">{screenshotFile.name}</span></p>
+            )}
+          </div>
         </div>
 
         <div className="pt-6">
@@ -164,7 +330,6 @@ export default function RegistrationForm() {
             ) : (
               <>
                 Submit Registration
-                <span className="ml-2">🚀</span>
               </>
             )}
           </button>
