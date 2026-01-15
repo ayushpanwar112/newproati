@@ -65,8 +65,8 @@ export default function RegistrationPage() {
           <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg">
             <h3 className="text-lg font-semibold mb-3 text-gray-900">📅 Event Details</h3>
             <ul className="space-y-2 text-gray-600 text-sm">
-              <li><strong>Dates:</strong> March 15-17, 2025</li>
-              <li><strong>Venue:</strong> AIMS Rishikesh Campus</li>
+              <li><strong>Dates:</strong> 25 to 27 sep , 2026</li>
+              <li><strong>Venue:</strong> ABV auditorium AIIMS Rishikesh, Uttarakhand</li>
               <li><strong>Format:</strong> Hybrid (In-person + Virtual)</li>
               <li><strong>Registration Fee:</strong> ₹2,500 (Early Bird)</li>
             </ul>

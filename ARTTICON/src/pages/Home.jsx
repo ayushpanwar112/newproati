@@ -8,6 +8,7 @@ import { Hero } from '../components/Hero/Hero'
 import  img10 from '../assets/Gallery/img10.jpg'
 import ConferenceScheduleSection from '../components/Hero/ConferenceScheduleSection'
 import visionImage from '../assets/vision.jpg'
+import { CountdownSection } from '../components/clock/CountdownSection'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -30,11 +31,9 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           {/* Conference Theme Title */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-600 text-sm font-medium mb-6">
-              📍Atal Bihari Vajpayee auditorium AIIMS  Rishikesh, Uttarakhand • 25 to 27 sep , 2026
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Revolutionizing Radiotherapy:
+            
+            <h2 className="text-4xl lg:text-5xl font-bold text-amber-600 mb-4">
+            <span className='text-[#2E9550]'>Revolutionizing</span>   Radiotherapy:
             </h2>
 
 
@@ -56,7 +55,8 @@ export default function Home() {
 
   <div className="relative z-10 w-full h-full flex items-center justify-center shadow-lg rounded-xl">
     <p className="text-3xl lg:text-4xl font-bold text-white tracking-wide">
-      From Vision to Precision
+   
+      <span clas> From Vision</span>   to Precision
     </p>
   </div>
 
@@ -136,72 +136,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Schedule Preview */}
-      {/* <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Conference Schedule</h2>
-            <p className="text-xl text-gray-600">Three days packed with insights, learning, and networking opportunities</p>
-          </div>
-          
-          <div className="grid lg:grid-cols-3 gap-6">
-            {[
-              {
-                day: "Day 1",
-                date: "February 14, 2026",
-                color: "from-blue-500 to-cyan-500",
-                events: [
-                  "9:00 AM - Registration & Welcome",
-                  "10:30 AM - Keynote: Future of RT",
-                  "2:00 PM - IMRT & VMAT Sessions",
-                  "6:00 PM - Welcome Reception"
-                ]
-              },
-              {
-                day: "Day 2", 
-                date: "February 15, 2026",
-                color: "from-cyan-500 to-blue-600",
-                events: [
-                  "9:00 AM - QA & Dosimetry Workshop",
-                  "11:00 AM - Brachytherapy Session", 
-                  "2:30 PM - Research Presentations",
-                  "7:00 PM - Awards Banquet"
-                ]
-              },
-              {
-                day: "Day 3",
-                date: "February 16, 2026", 
-                color: "from-blue-600 to-indigo-600",
-                events: [
-                  "9:00 AM - Stereotactic Radiosurgery",
-                  "11:30 AM - Technology Exhibition",
-                  "2:00 PM - ARTTI Awards Ceremony", 
-                  "4:00 PM - Closing & Future Vision"
-                ]
-              }
-            ].map((day, index) => (
-              <div key={index} className="bg-gradient-to-br from-gray-50 to-blue-50 p-8 rounded-2xl border border-gray-200 hover:shadow-lg transition-all duration-300">
-                <div className="text-center mb-6">
-                  <div className={`text-2xl font-bold bg-gradient-to-r ${day.color} text-transparent bg-clip-text mb-2`}>
-                    {day.day}
-                  </div>
-                  <div className="text-gray-600 font-medium">{day.date}</div>
-                </div>
-                <div className="space-y-4">
-                  {day.events.map((event, eventIndex) => (
-                    <div key={eventIndex} className="flex items-center space-x-3 p-3 rounded-lg bg-white/50 hover:bg-white transition-colors duration-200">
-                      <div className={`w-2 h-2 bg-gradient-to-r ${day.color} rounded-full flex-shrink-0`}></div>
-                      <span className="text-sm text-gray-700">{event}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-      <ConferenceScheduleSection />
 
+
+      <ConferenceScheduleSection />
+ <CountdownSection/>
     <section
   className="py-20 bg-cover bg-center relative"
   style={{ backgroundImage: `url(${img10})` }}
@@ -217,7 +155,7 @@ export default function Home() {
         to="/register" 
         className="px-10 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 min-w-[200px]"
       >
-        Register Today <span className="text-lg">🎯</span>
+        Registration coming soon. <span className="text-lg">🎯</span>
       </Link>
       <button className="px-10 py-4 border-2 border-white/70 bg-white/10 backdrop-blur-sm text-white font-bold rounded-lg hover:bg-white/20 hover:border-white transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 min-w-[200px]">
         Download Brochure <span className="text-lg">📄</span>
@@ -228,6 +166,7 @@ export default function Home() {
     </p>
   </div>
 </section>
+
 
     </div>
   )

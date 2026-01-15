@@ -36,10 +36,13 @@ export const Hero = () => {
           </span>
         </h1>
 
+<div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-600 text-lg font-medium mb-6">
+              📍ABV auditorium AIIMS Rishikesh, Uttarakhand • 25 to 27 sep , 2026
+            </div>
         {/* 🔥 DESCRIPTION */}
         <p className="text-lg md:text-[22px] lg:text-2xl  text-gray-200 max-w-4xl mx-auto leading-relaxed mb-12">
           Association of Radiation Therapists and Technologists of India.
-          Advancing excellence in radiation therapy and medical imaging technology.
+          Advancing excellence in radiation therapy.
         </p>
 
         {/* 🔥 CTA */}
