@@ -8,6 +8,10 @@ import { Hero } from '../components/Hero/Hero'
 import  img10 from '../assets/Gallery/img10.jpg'
 import ConferenceScheduleSection from '../components/Hero/ConferenceScheduleSection'
 import visionImage from '../assets/vision.jpg'
+import AbstractImage from "../assets/abstract.jpg";
+import secretaryImg from "../assets/Secratery.jpg";
+
+
 import { CountdownSection } from '../components/clock/CountdownSection'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -31,11 +35,10 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           {/* Conference Theme Title */}
           <div className="text-center mb-16">
-            
-            <h2 className="text-4xl lg:text-5xl font-bold text-amber-600 mb-4">
-            <span className='text-[#2E9550]'>Revolutionizing</span>   Radiotherapy:
-            </h2>
-
+            <h2 className="text-4xl lg:text-5xl font-extrabold tracking-wide mb-4">
+    <span className="text-[#2E9550]">Revolutionizing</span>{' '}
+    <span className="text-gray-800">Radiotherapy</span>
+  </h2>
 
             {/* <div className="inline-block mb-8 w-full h-48 ">
   <div className="bg-gradient-to-r from-[#3787c8] via-[#45AAFF] w-full h-48   flex flex-col justify-center items-center to-[#3787c8] py-4 rounded-xl shadow-lg">
@@ -89,7 +92,132 @@ export default function Home() {
           </div>
         </div>
       </section>
+ {/* Welcome Message */}
+      <section className="relative py-16 px-4 overflow-hidden">
+      
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-center bg-cover"
+        style={{
+          backgroundImage: `url(${AbstractImage})`,
+          opacity: 0.8,
+        }}
+      />
 
+      {/* White overlay to soften more */}
+      <div className="absolute inset-0 bg-white/80" />
+
+      {/* Content */}
+      <div className="relative max-w-4xl mx-auto">
+        
+        {/* Welcome badge */}
+       <div className="flex justify-start mb-8">
+  <div className="px-10 py-5 bg-gradient-to-r from-blue-600 to-sky-500 text-white text-3xl font-bold rounded-2xl shadow-lg">
+    Welcome Message
+  </div>
+</div>
+
+
+        
+
+        {/* Content card */}
+        <div className="bg-white rounded-2xl shadow-md p-6 md:p-8 text-gray-700 text-sm md:text-base leading-relaxed">
+          <p className="mb-4">
+            Dear Colleagues and Esteemed Guests,
+          </p>
+
+          <p className="mb-4">
+            It gives us immense pleasure to cordially invite you to{" "}
+            <strong>ARTTICON 2026</strong>, to be held from{" "}
+            <strong>25th to 27th September 2026</strong> at{" "}
+            <strong>AIIMS Rishikesh, Uttarakhand</strong>.
+          </p>
+          <p className="mb-4">
+            We are delighted to introduce the theme of this year's conference:
+          </p>
+          <p className="mb-5 text-center font-semibold italic text-sky-700">
+            “Revolutionizing Radiotherapy: From Vision to Precision”
+          </p>
+
+          <p className="mb-4">
+            ARTTICON 2026 is a prestigious national and international conference
+            organized by the {" "}
+            <strong>Association of Radiation Therapists and
+            Technologists of India (ARTTI)</strong>. The conference brings together eminent professionals, experts, and thought leaders from India and across the globe, fostering and 
+            intellectually stimulating environment that promotes advanced learning, meaningful Professional collaboration, and academic inspiration.
+          </p>
+        
+
+          <p className="mb-4">
+            The scientific program will feature expert lectures and panel
+            discussions delivered by leading {" "}
+            <strong>Radiation Therapists, Medical
+            Physicists, and Radiation Oncologists</strong>, along with trade exhibitions
+            showcasing cutting-edge advancements in radiation therapy
+            technology and patient immobilization systems.
+          </p>
+          <p className="mb-4">
+            We are especially proud to host this conference in Uttarakhand for
+            the first time. Adding to this, Rishikesh—renowned as the {" "}
+            <strong>“Yoga Capital of the
+            World”</strong>—offers a unique blend of spirituality, culture, and
+            adventure. Nestled on the banks of the sacred Ganga, Rishikesh is renowned for its meditation centers,
+             iconic ashrams such as {" "}
+            <strong>Parmarth Niketan</strong> and {" "}
+            <strong>The Beatles Ashram</strong>, vibrant {" "}
+            <strong> Ganga Aarti</strong> rituals, and ancient temples. 
+             It also serves as a gateway to the {" "}
+            <strong>Garhwal Himalayas</strong> and the {" "}
+            <strong> Char Dham pilgrimage</strong>, while offering adventure activities like rafting
+            and bungee jumping. 
+            Landmarks such as {" "}
+            <strong>Laxman Jhula, Ram Jhula, and Janki Setu </strong> further enrich the visitor experience.
+          </p>
+           <p className="mb-4">
+            We warmly invite you to join us at {" "}
+            <strong>ARTTICON 2026</strong> for an unforgettable academic and cultural journey. Your esteemed 
+            presence will greatly contribute to the success of this landmark event.
+
+          </p>
+           <p className="mb-4">
+            We look forward to welcoming you to Rishikesh.
+          </p>
+
+          <p className="mb-4">
+            With warm regards
+          </p>
+          
+          {/* Photo */}
+    <img
+      src={secretaryImg}
+      alt="Organising Secretary"
+      className="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover border-4 border-sky-500"
+    />
+
+    {/* Details */}
+    <div>
+      <p className="font-bold text-gray-900">
+       Ashwani Jaiswal
+      </p>
+      <p className="font-semibold text-gray-800">
+        Organizing Secretary
+      </p>
+      <p className="font-semibold text-gray-800">
+        ARTTICON 2026
+      </p>
+      <p className="text-sm text-gray-700">
+        Association of Radiation Therapists and Technologists
+      </p>
+    </div>
+
+  </div>
+</div>
+
+          
+        
+  
+    </section>
+  
    
 
       {/* Speakers Section */}
@@ -148,7 +276,7 @@ export default function Home() {
   <div className="relative max-w-4xl mx-auto px-6 text-center text-white">
     <h2 className="text-4xl font-bold mb-6">Ready to Join ARTTICON 2026?</h2>
     <p className="text-xl mb-8 opacity-95 max-w-2xl mx-auto">
-      Don't miss this opportunity to be part of India's premier radiation therapy conference in the spiritual Himalayas
+      Don't miss this opportunity to be part of India's premier radiation therapy conference in the spiritual Himalayas.
     </p>
     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
       <Link 
@@ -161,9 +289,7 @@ export default function Home() {
         Download Brochure <span className="text-lg">📄</span>
       </button>
     </div>
-    <p className="text-blue-100 mt-6 text-sm">
-      Early bird pricing available until December 31, 2025
-    </p>
+    
   </div>
 </section>
 

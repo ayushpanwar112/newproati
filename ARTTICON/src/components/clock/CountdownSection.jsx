@@ -31,7 +31,7 @@ export const CountdownSection = () => {
       />
 
       {/* 🌫️ Dark + Blur Overlay */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-black/50"></div>
 
       {/* 🧊 Glass Countdown Card */}
       <div className="relative z-10  rounded-3xl  px-10 py-8 text-center">

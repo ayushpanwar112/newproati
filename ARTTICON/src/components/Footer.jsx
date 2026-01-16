@@ -114,22 +114,17 @@ export default function Footer() {
                   text: 'info@artticon2026.org',
                   href: 'mailto:info@artticon2026.org',
                 },
+               
                 {
                   icon: faPhone,
                   label: 'Phone',
-                  text: '9454883456',
-                  href: 'tel:+919454883456',
-                },
-                {
-                  icon: faPhone,
-                  label: 'Phone',
-                  text: '8941005271',
+                  text: '+91 8941005271',
                   href: 'tel:+918941005271',
                 },
                 {
                   icon: faPhone,
                   label: 'Phone',
-                  text: '9120780001',
+                  text: '+91 9120780001',
                   href: 'tel:+919120780001',
                 },
                 {

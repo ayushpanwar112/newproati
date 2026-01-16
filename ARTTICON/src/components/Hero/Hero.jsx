@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import heroImg from '../../assets/hero.png'
+import heroImg from '../../assets/hero1.jpg'
 
 export const Hero = () => {
   return (
@@ -41,8 +41,8 @@ export const Hero = () => {
             </div>
         {/* 🔥 DESCRIPTION */}
         <p className="text-lg md:text-[22px] lg:text-2xl  text-gray-200 max-w-4xl mx-auto leading-relaxed mb-12">
-          Association of Radiation Therapists and Technologists of India.
-          Advancing excellence in radiation therapy.
+          <strong>Association of Radiation Therapists and Technologists of India.
+          Advancing excellence in radiation therapy and imaging technology.</strong>
         </p>
 
         {/* 🔥 CTA */}

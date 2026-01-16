@@ -12,45 +12,49 @@ export default function Navbar() {
   return (
     <div className="w-full">
 
-      {/* ===== TOP HEADER ===== */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-screen-xl mx-auto px-6 py-6">
-          <div className="grid grid-cols-3 items-center">
-
-            {/* LEFT LOGO */}
-            <div className="flex justify-start">
-              <img
-                src={event}
-                alt="Event Logo"
-                className="h-24 md:h-28 object-contain"
-              />
-            </div>
-
-            {/* CENTER TITLE */}
-            <div className="text-center">
-              <Link to="/">
-                <h1 className="text-3xl md:text-5xl font-extrabold tracking-wide">
-                  <span className="text-[#2E9550]">ARTTICON</span>{' '}
-                  <span className="text-amber-600">2026</span>
-                </h1>
-              </Link>
-              <p className="mt-1 text-sm text-gray-500 tracking-wide">
-                International Academic Conference
-              </p>
-            </div>
-
-            {/* RIGHT LOGO */}
-            <div className="flex justify-end">
-              <img
-                src={aims}
-                alt="AIMS Logo"
-                className="h-24 md:h-28 object-contain"
-              />
-            </div>
-
-          </div>
-        </div>
+    {/* ===== TOP HEADER ===== */}
+<div className="bg-white border-b border-gray-200">
+  <div className="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between">
+    
+    {/* LEFT: Phone above Logo, vertically centered */}
+    <div className="flex flex-col justify-center items-start">
+      {/* Phone number */}
+      <div className="hidden md:block text-gray-700 font-semibold mb-1">
+        📞 +91 9454883456
       </div>
+
+      {/* Event Logo */}
+      <img
+        src={event}
+        alt="Event Logo"
+        className="h-24 md:h-28 object-contain"
+      />
+    </div>
+
+    {/* CENTER TITLE */}
+    <div className="text-center flex-1 flex flex-col justify-center">
+      <Link to="/">
+        <h1 className="text-3xl md:text-5xl font-extrabold tracking-wide">
+          <span className="text-[#2E9550]">ARTTICON</span>{' '}
+          <span className="text-amber-600">2026</span>
+        </h1>
+      </Link>
+      <p className="mt-1 text-xs md:text-sm text-gray-700 italic font-bold whitespace-nowrap tracking-wide">
+        more victory together...
+      </p>
+    </div>
+
+    {/* RIGHT LOGO */}
+    <div className="flex justify-end items-center">
+      <img
+        src={aims}
+        alt="AIMS Logo"
+        className="h-24 md:h-28 object-contain relative top-4"
+      />
+    </div>
+  </div>
+</div>
+
 
       {/* ===== NAVBAR ===== */}
       <nav className="bg-[#45AAFF] sticky top-0 z-50 shadow-lg">
