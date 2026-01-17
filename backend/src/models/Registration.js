@@ -16,6 +16,12 @@ const registrationSchema = new mongoose.Schema(
     paymentmode: { type: String, required: true, trim: true },
     trnsNo: { type: String, required: true, trim: true },
     paymentScreenshotUrl: { type: String, trim: true },
+    status: {
+      type: String,
+      enum: ["pending", "confirmed", "cancelled"],
+      default: "pending",
+      trim: true,
+    },
     email: { type: String, required: true, trim: true, lowercase: true },
     designation: { type: String, required: true },
   },
