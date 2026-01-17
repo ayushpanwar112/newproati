@@ -26,7 +26,7 @@ const registrationSchema = new mongoose.Schema(
     designation: { type: String, required: true },
     memberId :{ type : String },
     studentId : {type : String},
-    refreshToken :{type : String}
+    refreshToken :{type : String},
       role: {
       type: String,
       enum: ["admin", "user"],

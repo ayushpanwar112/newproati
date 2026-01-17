@@ -14,6 +14,11 @@ body {
     margin: 2rem auto;
     padding: 1rem;
 }
+.input {
+  @apply w-full h-11 px-4 text-sm border border-gray-300 rounded-lg
+         bg-white focus:outline-none focus:ring-2 focus:ring-teal-500;
+}
+
 
 .success {
     color: green
