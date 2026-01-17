@@ -1,6 +1,8 @@
 import { Registration } from "../models/Registration.js"
 import bcrypt from 'bcryptjs'
 
+const ALLOWED_STATUSES = new Set(["pending", "confirmed", "cancelled"])
+
 export async function createRegistration(req, res) {
   try {
     const {
@@ -94,3 +96,28 @@ export async function listRegistrations(_req, res) {
   }
 }
 
+export async function updateRegistrationStatus(req, res) {
+  try {
+    const { id } = req.params || {}
+    const { status } = req.body || {}
+
+    const nextStatus = String(status || "").toLowerCase().trim()
+    if (!ALLOWED_STATUSES.has(nextStatus)) {
+      return res.status(400).json({ error: "Invalid status. Use: pending, confirmed, cancelled" })
+    }
+
+    const updated = await Registration.findByIdAndUpdate(
+      id,
+      { status: nextStatus },
+      { new: true, runValidators: true }
+    ).lean()
+
+    if (!updated) {
+      return res.status(404).json({ error: "Registration not found" })
+    }
+
+    return res.json({ message: "Status updated", registration: updated })
+  } catch (err) {
+    res.status(500).json({ error: err?.message || "Server error" })
+  }
+}

@@ -7,8 +7,8 @@ const authRoute = express.Router();
 
 
 
-authRoute.route("/login" ,  loginUser)
-authRoute.route("/refresh-token" , refreshAccessToken )
+authRoute.post("/login" ,  loginUser)
+authRoute.post("/refresh-token" , refreshAccessToken )
 
 
 export default authRoute;
