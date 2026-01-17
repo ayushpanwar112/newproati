@@ -11,49 +11,43 @@ export default function Navbar() {
 
   return (
     <div className="w-full">
+      {/* ===== TOP HEADER ===== */}
+       <div className="bg-white border-b border-gray-200"> 
+        <div className="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between">
 
-    {/* ===== TOP HEADER ===== */}
-<div className="bg-white border-b border-gray-200">
-  <div className="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between">
+          {/* LEFT: Phone above Logo, vertically centered */} 
+          <div className="flex flex-col justify-center items-start"> 
+            {/* Phone number */} 
+            <div className="text-gray-600 text-[11px] sm:text-sm whitespace-nowrap -mt-2">
+              📞<strong>+91 9454883456</strong>
+              </div> 
+
+              {/* Event Logo */} 
+              <img src={event}
+               alt="Event Logo" 
+               className="h-16 sm:h-20 md:h-28 object-contain relative top-2" /> 
+              </div> 
+
+              {/* CENTER TITLE */} 
+              <div className="text-center flex-1 flex flex-col justify-center"> <Link to="/"> 
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-center">
+                <span className="text-[#2E9550]">ARTTICON</span>{' '} 
+                <span className="text-amber-600">2026</span> </h1> </Link>
+                 <p className="mt-1 text-xs md:text-sm text-gray-700 italic font-bold font-[cursive] whitespace-nowrap tracking-wide">
+                   more victory together...
+                    </p> </div> 
+
+                    {/* RIGHT LOGO */} 
+                    <div className="flex justify-end items-center"> 
+        <img src={aims} alt="AIMS Logo"
+         className="h-16 sm:h-20 md:h-28 object-contain relative top-3 ml-2 sm:ml-0" /> 
+        </div> 
+        </div> 
+        </div>
+
     
-    {/* LEFT: Phone above Logo, vertically centered */}
-    <div className="flex flex-col justify-center items-start">
-      {/* Phone number */}
-      <div className="hidden md:block text-gray-700 font-semibold mb-1">
-        📞 +91 9454883456
-      </div>
+  
 
-      {/* Event Logo */}
-      <img
-        src={event}
-        alt="Event Logo"
-        className="h-24 md:h-28 object-contain"
-      />
-    </div>
-
-    {/* CENTER TITLE */}
-    <div className="text-center flex-1 flex flex-col justify-center">
-      <Link to="/">
-        <h1 className="text-3xl md:text-5xl font-extrabold tracking-wide">
-          <span className="text-[#2E9550]">ARTTICON</span>{' '}
-          <span className="text-amber-600">2026</span>
-        </h1>
-      </Link>
-      <p className="mt-1 text-xs md:text-sm text-gray-700 italic font-bold whitespace-nowrap tracking-wide">
-        more victory together...
-      </p>
-    </div>
-
-    {/* RIGHT LOGO */}
-    <div className="flex justify-end items-center">
-      <img
-        src={aims}
-        alt="AIMS Logo"
-        className="h-24 md:h-28 object-contain relative top-4"
-      />
-    </div>
-  </div>
-</div>
 
 
       {/* ===== NAVBAR ===== */}
@@ -79,7 +73,7 @@ export default function Navbar() {
                 className="px-7 py-2.5 rounded-full bg-[white] text-[#45AAFF] font-semibold shadow-md hover:shadow-xl hover:scale-105 transition"
               >
 
-                Registration coming soon.
+                Registration Starts now.
               </Link>
             </div>
 
@@ -124,7 +118,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className="block mt-3 px-4 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold rounded-lg text-center"
               >
-                Register Now
+                Registration
               </Link>
             </div>
           )}

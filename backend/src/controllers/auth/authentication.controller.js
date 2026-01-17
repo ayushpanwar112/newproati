@@ -1,12 +1,36 @@
-import { Registration } from "../../models/Registration";
-import { asyncHandler } from "../../utils/asyncHandler";
-import ErrorHandler from "../../utils/ErrorHandler";
-import { generateAccessAndRefreshTokens } from "../../utils/jwtToken";
+import { Registration } from "../../models/Registration.js";
+import { asyncHandler } from "../../utils/asyncHandler.js";
+import ErrorHandler from "../../utils/ErrorHandler.js";
+import { generateAccessAndRefreshTokens } from "../../utils/jwtToken.js";
 import bcrypt from  "bcryptjs" 
+
+const setAuthCookies = (res, accessToken, refreshToken) => {
+  const cookieOptions = {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "None",
+    path: "/",
+  };
+ res.cookie("accessToken", accessToken, {
+    ...cookieOptions,
+    maxAge: 24 * 60 * 60 * 1000,
+  });
+  res.cookie("refreshToken", refreshToken, {
+    ...cookieOptions,
+    maxAge: 7 * 24 * 60 * 60 * 1000,
+  });
+};
+
+
+
 export const loginUser = asyncHandler(async (req, res, next) => {
   const { email, password } = req.body;
 
-  const user = await Registration.findOne({ email });
+    if (!email || !password) {
+    return next(new ErrorHandler("Please provide email and password", 400));
+  }
+
+  const user = await Registration.findOne({ email }).select("+password");
   if (!user) return next(new ErrorHandler("Invalid credentials", 401));
 
   // COMPARISON OUTSIDE: Done here
@@ -21,6 +45,9 @@ export const loginUser = asyncHandler(async (req, res, next) => {
   user.refreshToken = refreshToken;
   await user.save();
 
+  setAuthCookies(res, accessToken, refreshToken);
+
+
   res.status(200).json({
     success: true,
     accessToken,
@@ -32,14 +59,16 @@ export const loginUser = asyncHandler(async (req, res, next) => {
 
 
 export const refreshAccessToken = asyncHandler(async (req, res, next) => {
-  const { token } = req.body; // Flutter will send the refresh token here
+  const  token = (req.headers.authorization?.startsWith("Bearer") 
+      ? req.headers.authorization.split(" ")[1] 
+      : null) || req.cookies?.refreshToken;
+
 
   if (!token) return next(new ErrorHandler("Refresh token required", 401));
 
   const decoded = jwt.verify(token, process.env.REFRESH_TOKEN_SECRET);
   const user = await Registration.findById(decoded.id);
 
-  // If token in DB doesn't match the one sent, someone else logged in
   if (!user || user.refreshToken !== token) {
     return next(new ErrorHandler("Session expired or logged in elsewhere", 403));
   }
@@ -47,6 +76,8 @@ export const refreshAccessToken = asyncHandler(async (req, res, next) => {
   const tokens = generateAccessAndRefreshTokens(user._id);
   user.refreshToken = tokens.refreshToken;
   await user.save();
+
+  setAuthCookies(res, tokens.accessToken, tokens.refreshToken);
 
   res.status(200).json({
     success: true,

@@ -34,11 +34,12 @@ export default function Home() {
       <section ref={statsRef} className="py-20 bg-white relative" >
         <div className="max-w-6xl mx-auto px-6">
           {/* Conference Theme Title */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-extrabold tracking-wide mb-4">
+          <div className="text-center mb-16 flex flex-col items-center">
+  <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-wide mb-4 text-center">
     <span className="text-[#2E9550]">Revolutionizing</span>{' '}
     <span className="text-gray-800">Radiotherapy</span>
   </h2>
+
 
             {/* <div className="inline-block mb-8 w-full h-48 ">
   <div className="bg-gradient-to-r from-[#3787c8] via-[#45AAFF] w-full h-48   flex flex-col justify-center items-center to-[#3787c8] py-4 rounded-xl shadow-lg">
@@ -72,24 +73,24 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
+         {/* <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100">
-              <div className="stat-number text-4xl font-bold text-blue-600 mb-2">2000+</div>
+              <div className="stat-number text-4xl font-bold text-blue-600 mb-2">0</div>
               <div className="text-gray-600 font-medium">RT Professionals</div>
             </div>
             <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-100">
-              <div className="stat-number text-4xl font-bold text-cyan-600 mb-2">75+</div>
+              <div className="stat-number text-4xl font-bold text-cyan-600 mb-2">0</div>
               <div className="text-gray-600 font-medium">Expert Speakers</div>
             </div>
             <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100">
-              <div className="stat-number text-4xl font-bold text-blue-700 mb-2">20+</div>
+              <div className="stat-number text-4xl font-bold text-blue-700 mb-2">0</div>
               <div className="text-gray-600 font-medium">Technical Sessions</div>
             </div>
             <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-100">
               <div className="stat-number text-4xl font-bold text-cyan-700 mb-2">3</div>
               <div className="text-gray-600 font-medium">Conference Days</div>
             </div>
-          </div>
+          </div>*/}
         </div>
       </section>
  {/* Welcome Message */}
@@ -97,24 +98,39 @@ export default function Home() {
       
       {/* Background image */}
       <div
-        className="absolute inset-0 bg-center bg-cover"
-        style={{
-          backgroundImage: `url(${AbstractImage})`,
-          opacity: 0.8,
-        }}
-      />
+  className="absolute inset-0 bg-center sm:bg-cover bg-contain"
+  style={{ backgroundImage: `url(${AbstractImage})` }}
+/>
+
+      
 
       {/* White overlay to soften more */}
-      <div className="absolute inset-0 bg-white/80" />
+    <div className="absolute inset-0 bg-white/60 sm:bg-white/80" />
 
       {/* Content */}
       <div className="relative max-w-4xl mx-auto">
         
         {/* Welcome badge */}
        <div className="flex justify-start mb-8">
-  <div className="px-10 py-5 bg-gradient-to-r from-blue-600 to-sky-500 text-white text-3xl font-bold rounded-2xl shadow-lg">
-    Welcome Message
-  </div>
+  <div
+  className="
+    px-4 py-2
+    sm:px-6 sm:py-3
+    md:px-8 md:py-3
+    text-lg
+    sm:text-xl
+    md:text-2xl
+    bg-gradient-to-r from-blue-600 to-sky-500
+    text-white font-bold
+    rounded-xl
+    shadow-lg
+    inline-block
+  "
+>
+  Welcome Message
+</div>
+
+  
 </div>
 
 
@@ -205,7 +221,7 @@ export default function Home() {
       <p className="font-semibold text-gray-800">
         ARTTICON 2026
       </p>
-      <p className="text-sm text-gray-700">
+      <p className="text-xs sm:text-sm text-gray-700 whitespace-nowrap">
         Association of Radiation Therapists and Technologists
       </p>
     </div>
@@ -275,17 +291,17 @@ export default function Home() {
   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 opacity-80"></div>
   <div className="relative max-w-4xl mx-auto px-6 text-center text-white">
     <h2 className="text-4xl font-bold mb-6">Ready to Join ARTTICON 2026?</h2>
-    <p className="text-xl mb-8 opacity-95 max-w-2xl mx-auto">
+    <p className="text-xl mb-8 max-w-2xl mx-auto tracking-wide leading-relaxed text-center text-white drop-shadow-lg font-sans">
       Don't miss this opportunity to be part of India's premier radiation therapy conference in the spiritual Himalayas.
     </p>
     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
       <Link 
         to="/register" 
-        className="px-10 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 min-w-[200px]"
+        className="px-8 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 min-w-[200px]"
       >
-        Registration coming soon. <span className="text-lg">🎯</span>
+        Start Registration <span className="text-lg">🎯</span>
       </Link>
-      <button className="px-10 py-4 border-2 border-white/70 bg-white/10 backdrop-blur-sm text-white font-bold rounded-lg hover:bg-white/20 hover:border-white transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 min-w-[200px]">
+      <button className="px-6 py-2 border-2 border-white/70 bg-white/10 backdrop-blur-sm text-white font-bold rounded-lg hover:bg-white/20 hover:border-white transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 min-w-[200px]">
         Download Brochure <span className="text-lg">📄</span>
       </button>
     </div>

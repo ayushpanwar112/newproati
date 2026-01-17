@@ -41,11 +41,11 @@ export default function RegistrationPage() {
             </div>
           </div>
         </div>
-        
-        {/* Registration Stats */}
+        {/*
+       Registration Stats
         <div className="grid grid-cols-3 gap-6 mb-12 max-w-2xl mx-auto">
           <div className="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl">
-            <div className="text-2xl font-bold text-teal-600">342</div>
+            <div className="text-2xl font-bold text-teal-600">0</div>
             <div className="text-sm text-gray-600">Registered</div>
           </div>
           <div className="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl">
@@ -53,10 +53,11 @@ export default function RegistrationPage() {
             <div className="text-sm text-gray-600">Spots Left</div>
           </div>
           <div className="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl">
-            <div className="text-2xl font-bold text-teal-700">7</div>
+            <div className="text-2xl font-bold text-teal-700"></div>
             <div className="text-sm text-gray-600">Days Left</div>
           </div>
         </div>
+*/}
 
         <RegistrationForm />
 
@@ -68,15 +69,15 @@ export default function RegistrationPage() {
               <li><strong>Dates:</strong> 25 to 27 sep , 2026</li>
               <li><strong>Venue:</strong> ABV auditorium AIIMS Rishikesh, Uttarakhand</li>
               <li><strong>Format:</strong> Hybrid (In-person + Virtual)</li>
-              <li><strong>Registration Fee:</strong> ₹2,500 (Early Bird)</li>
+              
             </ul>
           </div>
           
           <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg">
             <h3 className="text-lg font-semibold mb-3 text-gray-900">🎁 What's Included</h3>
             <ul className="space-y-2 text-gray-600 text-sm">
-              <li>✓ Access to all sessions and workshops</li>
-              <li>✓ Conference materials and swag bag</li>
+              <li>✓ Access to all sessions</li>
+              <li>✓ Conference materials</li>
               <li>✓ Networking lunch and coffee breaks</li>
               <li>✓ Digital certificate of participation</li>
             </ul>
