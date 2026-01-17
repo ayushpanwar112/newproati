@@ -30,6 +30,7 @@ export default function Users() {
   const [error, setError] = useState("");
   const [selected, setSelected] = useState(null);
   const [updatingId, setUpdatingId] = useState(null);
+  const [statusFilter, setStatusFilter] = useState("all");
 
   const rows = useMemo(() => {
     return (registrations || []).map((r) => ({
@@ -38,6 +39,12 @@ export default function Users() {
       status: (r.status || "pending").toLowerCase(),
     }));
   }, [registrations]);
+
+  const filteredRows = useMemo(() => {
+    const filter = String(statusFilter || "all").toLowerCase();
+    if (filter === "all") return rows;
+    return rows.filter((r) => String(r.status || "pending").toLowerCase() === filter);
+  }, [rows, statusFilter]);
 
   async function fetchRegistrations() {
     try {
@@ -106,10 +113,42 @@ export default function Users() {
     }
   }
 
+  async function confirmAndUpdateSelectedStatus(nextStatus) {
+    if (!selected?._id) return;
+    if (updatingId === selected._id) return;
+
+    const statusLabel = String(nextStatus || "").toUpperCase();
+    const ok = window.confirm(`Are you sure you want to change status to ${statusLabel}?`);
+    if (!ok) return;
+
+    await updateStatus(selected._id, nextStatus);
+  }
+
   return (
     <div className="bg-white p-6 rounded-lg shadow-md ">
       <div className="flex items-center justify-between gap-4 mb-6">
-        <h1 className="text-2xl font-semibold">Registrations</h1>
+        <div>
+          <h1 className="text-2xl font-semibold">Registrations</h1>
+          <div className="text-sm text-gray-500 mt-1">
+            Showing <span className="font-medium text-gray-700">{filteredRows.length}</span> of{" "}
+            <span className="font-medium text-gray-700">{rows.length}</span>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            <label className="text-sm text-gray-600">Filter</label>
+            <select
+              className="border rounded-lg px-3 py-2 text-sm bg-white"
+              value={statusFilter}
+              onChange={(e) => setStatusFilter(e.target.value)}
+            >
+              <option value="all">All</option>
+              <option value="pending">Pending</option>
+              <option value="confirmed">Confirmed</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
         <button
           onClick={fetchRegistrations}
           className="px-4 py-2 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition disabled:opacity-60"
@@ -117,6 +156,7 @@ export default function Users() {
         >
           Refresh
         </button>
+        </div>
       </div>
 
       {error ? (
@@ -140,15 +180,15 @@ export default function Users() {
           </thead>
 
           <tbody>
-            {rows.length === 0 && !loading ? (
+            {filteredRows.length === 0 && !loading ? (
               <tr>
                 <td colSpan={8} className="py-6 px-4 text-center text-gray-600">
-                  No registrations found.
+                  No registrations found for this filter.
                 </td>
               </tr>
             ) : null}
 
-            {rows.map((r) => (
+            {filteredRows.map((r) => (
               <tr key={r._id} className="border-b hover:bg-gray-50 transition align-top">
                 <td className="py-3 px-4">
                   <div className="font-medium text-gray-800">{r.name}</div>
@@ -328,7 +368,7 @@ export default function Users() {
       <div className="flex flex-wrap gap-3 justify-end p-4 border-t bg-white/95 backdrop-blur sticky bottom-0">
       <button
         className="px-4 py-2 rounded-lg border text-gray-700 hover:bg-gray-100"
-        onClick={() => updateStatus(selected._id, "pending")}
+        onClick={() => confirmAndUpdateSelectedStatus("pending")}
         disabled={updatingId === selected._id}
       >
       Status  Mark Pending
@@ -336,7 +376,7 @@ export default function Users() {
 
       <button
         className="px-4 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 disabled:opacity-60"
-        onClick={() => updateStatus(selected._id, "confirmed")}
+        onClick={() => confirmAndUpdateSelectedStatus("confirmed")}
         disabled={updatingId === selected._id}
       >
        Status Confirm
@@ -344,7 +384,7 @@ export default function Users() {
 
       <button
         className="px-4 py-2 rounded-lg bg-red-600 text-white hover:bg-red-700 disabled:opacity-60"
-        onClick={() => updateStatus(selected._id, "cancelled")}
+        onClick={() => confirmAndUpdateSelectedStatus("cancelled")}
         disabled={updatingId === selected._id}
       >
       Status  Cancel
