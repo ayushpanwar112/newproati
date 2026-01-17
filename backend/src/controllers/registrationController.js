@@ -21,6 +21,8 @@ export async function createRegistration(req, res) {
       paymentmode,
       trnsNo,
       designation,
+      memberId,
+      studentId,
     } = req.body || {}
 
     const missing = []
@@ -37,6 +39,14 @@ export async function createRegistration(req, res) {
     if (!paymentmode) missing.push('paymentmode')
     if (!trnsNo) missing.push('trnsNo')
     if (!designation) missing.push('designation')
+
+    if (cate === 'ARTTI MEMBER' && !memberId) {
+      missing.push('ARTTI Member ID')
+    }
+    if (cate === 'student' && !studentId) {
+      missing.push('Student ID')
+    }
+    
 
     if (missing.length) {
       return res.status(400).json({ error: `Missing required fields: ${missing.join(', ')}` })
@@ -65,6 +75,8 @@ export async function createRegistration(req, res) {
       trnsNo,
       paymentScreenshotUrl,
       designation,
+      memberId: cate === 'ARTTI MEMBER' ? memberId : undefined,
+      studentId: cate === 'student' ? studentId : undefined,
     })
 
     return res.status(201).json({ message: 'Registered successfully', id: doc._id, paymentScreenshotUrl })

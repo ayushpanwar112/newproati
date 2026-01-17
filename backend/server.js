@@ -7,6 +7,8 @@ import fs from 'node:fs/promises'
 import { connectDB } from './config/db.js'
 import registrationRoutes from './src/routes/registrationRoutes.js'
 import { errorMiddleware } from './src/utils/error.js'
+import cookieParser from 'cookie-parser'
+import authRoute from './src/routes/authRoutes.js'
 
 dotenv.config()
 
@@ -30,6 +32,7 @@ app.use(cors(corsOptions))
 app.options(/.*/, cors(corsOptions))
 app.use(express.json())
 app.use(morgan('dev'))
+app.use(cookieParser())
 
 // Static files (uploaded payment screenshots)
 app.use(
@@ -49,6 +52,7 @@ app.get('/health', (_req, res) => {
 
 // API routes
 app.use('/form', registrationRoutes)
+app.use("/auth" , authRoute)
 
 app.get("/", (req, res) => {
   res.send("Hello from server ");
