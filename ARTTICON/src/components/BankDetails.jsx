@@ -1,4 +1,5 @@
 import React from 'react';
+import  img10 from '../assets/Gallery/scan.png'
 
 export const BankDetails = () => {
   return (
@@ -36,8 +37,8 @@ export const BankDetails = () => {
 
         <div className="flex items-center justify-between bg-teal-50 p-4 rounded-xl border border-teal-100">
           <span className="text-teal-800 font-medium">Helpline Number:</span>
-          <a href="tel:25648595426" className="text-teal-700 font-bold text-lg hover:underline">
-            +256 4859 5426
+          <a href="tel:+91 9454883456" className="text-teal-700 font-bold text-lg hover:underline">
+            +91 9454883456
           </a>
         </div>
       </div>

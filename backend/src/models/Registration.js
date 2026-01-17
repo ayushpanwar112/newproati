@@ -24,6 +24,12 @@ const registrationSchema = new mongoose.Schema(
     },
     email: { type: String, required: true, trim: true, lowercase: true },
     designation: { type: String, required: true },
+      role: {
+      type: String,
+      enum: ["admin", "user"],
+      default: "user",
+      required: true,
+    },
   },
   { timestamps: true }
 );
