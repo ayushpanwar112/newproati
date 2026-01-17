@@ -13,9 +13,17 @@ dotenv.config()
 const app = express()
 const PORT = process.env.PORT || 4000
 
+const corsOptions = {
+  origin: true,
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}
+
 // Global middleware
 app.use(helmet())
-app.use(cors({ origin: true }))
+app.use(cors(corsOptions))
+app.options(/.*/, cors(corsOptions))
 app.use(express.json())
 app.use(morgan('dev'))
 
@@ -44,7 +52,7 @@ async function start() {
   try {
     await fs.mkdir('uploads/payments', { recursive: true })
     await connectDB()
-    app.listen(PORT, () => {
+    app.listen(PORT, "0.0.0.0", () => {
       console.log(`✅ Server running at http://localhost:${PORT}`)
     })
   } catch (err) {
