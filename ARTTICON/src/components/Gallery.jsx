@@ -63,9 +63,10 @@ export default function Gallery() {
 
   {/* IMAGE SLIDER SECTION */}
   <section className="bg-gray-100 py-10">
-    <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-6 tracking-wide text-gray-800">
-      Campus and its Environment
-    </h2>
+    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-center mb-6 tracking-tight text-gray-800">
+  Campus and its Environment
+</h2>
+
 
     <div className="max-w-5xl mx-auto px-4 relative group">
       <Swiper

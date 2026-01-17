@@ -1,6 +1,8 @@
 
 
   import React from 'react'
+  import { Link } from 'react-router-dom'
+
   import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
   import {
     faEnvelope,
@@ -8,7 +10,8 @@
     faLocationDot,
   } from '@fortawesome/free-solid-svg-icons'
   import {
-    faXTwitter,
+    faInstagram,
+    faFacebookF,
     faLinkedinIn,
   } from '@fortawesome/free-brands-svg-icons'
 
@@ -47,29 +50,36 @@ export default function Footer() {
 
             <div className="flex space-x-4">
               {[
-                {
-                  icon: faEnvelope,
-                  label: 'Email',
-                  href: 'mailto:info@artticon2026.org',
-                },
-                {
-                  icon: faXTwitter,
-                  label: 'X (Twitter)',
-                  href: 'https://x.com/',
-                },
-                {
-                  icon: faLinkedinIn,
-                  label: 'LinkedIn',
-                  href: 'https://www.linkedin.com/',
-                },
-              ].map((item, i) => (
+  {
+    icon: faEnvelope,
+    label: 'Email',
+    href: 'mailto:info@artticon2026.org',
+  },
+  {
+    icon: faInstagram,
+    label: 'Instagram',
+    href: 'https://www.instagram.com/artticon2026',
+  },
+  {
+    icon: faFacebookF,
+    label: 'Facebook',
+    href: 'https://www.facebook.com/',
+  },
+  {
+    icon: faLinkedinIn,
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/',
+  },
+]
+.map((item, i) => (
                 <a
                   key={i}
                   href={item.href}
                   aria-label={item.label}
                   className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center transition-colors hover:bg-[#E6F3FF] hover:text-[#1D8FE1]"
                   target={item.href.startsWith('http') ? '_blank' : undefined}
-                  rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
+                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+
                 >
                   <FontAwesomeIcon icon={item.icon} className="text-sm" />
                 </a>
@@ -82,22 +92,38 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-6 text-gray-900">
               Quick Links
             </h4>
-            <ul className="space-y-3">
-              {['Home', 'Register', 'Schedule', 'Speakers'].map((item, i) => (
-                <li key={i}>
-                  <a
-                    href="#"
-                    className="text-gray-600 transition-colors flex items-center group hover:text-[#45AAFF]"
-                  >
-                    <span
-                      className="w-2 h-2 rounded-full mr-3 transition-colors"
-                      style={{ backgroundColor: '#45AAFF' }}
-                    />
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            
+                <ul className="space-y-3">
+  {[
+    { label: 'Home', to: '/' },
+    
+    { label: 'Events & Dates', to: '/events' },
+    { label: 'Venue', to: '/venue' },
+    
+    { label: 'Registration Fees', to: '/registration-fees' },
+    { label: 'Online Registration', to: '/register' },
+    { label: 'Food and Accommodation Details', to: '/food-accommodation' },
+    
+   
+    
+    
+    { label: 'Contact Us', to: '/contact' },
+  ].map((item, i) => (
+    <li key={i}>
+      <Link
+        to={item.to}
+        className="text-gray-600 transition-colors flex items-center hover:text-[#45AAFF]"
+      >
+        <span
+          className="w-2 h-2 rounded-full mr-3"
+          style={{ backgroundColor: '#45AAFF' }}
+        />
+        {item.label}
+      </Link>
+    </li>
+  ))}
+</ul>
+
           </div>
 
           {/* Contact Info */}

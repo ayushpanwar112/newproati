@@ -262,8 +262,15 @@ const ConferenceScheduleSection = () => {
                 Details.
               </h2>
 
-              <p className="text-xl text-slate-600 leading-relaxed max-w-lg">
-                Experience three days of groundbreaking research, hands-on workshops, and networking with global leaders
+              <p className="text-xl
+  font-medium
+  text-slate-800
+  leading-relaxed
+  max-w-lg
+  tracking-wide
+  border-l-4 border-blue-600
+  pl-5">
+                Experience three days of groundbreaking research, expert-led discussions, and high-level networking with global leaders
                 in radiotherapy.
               </p>
             </div>
@@ -305,6 +312,17 @@ const ConferenceScheduleSection = () => {
                   <p className="text-slate-200 font-medium leading-relaxed">
                     Atal Bihari Vajpayee Auditorium <br />
                     Uttarakhand, India — 249203
+                  </p>
+                  
+  {/* Horizontal Divider */}
+  <div className="h-[2px] bg-slate-200 rounded-full w-full my-4"></div>
+
+
+                  <div className="text-2xl font-black text-white mb-2">Artticon 2026</div>
+                  <p className="text-slate-200 font-medium leading-relaxed">
+                    Theme : <br />
+                    From Vision to Precision
+                    
                   </p>
                 </div>
               </div>
