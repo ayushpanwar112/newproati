@@ -201,7 +201,9 @@ export default function Users() {
                 </td>
                 <td className="py-3 px-4 text-gray-600">
                   <div>{r.cate}</div>
-                  <div className="text-xs text-gray-500">Fee: {r.regFee}</div>
+<div className="text-xs text-gray-500">
+  Fee: <span className="text-green-700 font-semibold text-base">₹ { r.regFee}</span>
+</div>
                 </td>
                 <td className="py-3 px-4 text-gray-600">
                   <div>{r.paymentmode}</div>
@@ -325,7 +327,7 @@ export default function Users() {
         <Detail label="Phone" value={selected.phone} />
         <Detail label="Alt Phone" value={selected.altphone} />
         <Detail label="Category" value={selected.cate} />
-        <Detail label="Registration Fee" value={selected.regFee} />
+        <Detail label="Registration Fee" value={selected.regFee}  />
         <Detail label="Payment Mode" value={selected.paymentmode} />
         <Detail label="Transaction No" value={selected.trnsNo} />
       </div>
