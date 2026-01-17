@@ -82,7 +82,20 @@ export default function Users() {
 
       const updated = payload?.registration;
       if (updated?._id) {
-        setRegistrations((prev) => prev.map((r) => (r._id === updated._id ? updated : r)));
+        const normalizedUpdated = {
+          ...updated,
+          screenshotAbsUrl: toAbsoluteUrl(updated.paymentScreenshotUrl),
+          status: (updated.status || "pending").toLowerCase(),
+        };
+
+        setRegistrations((prev) => prev.map((r) => (r._id === updated._id ? normalizedUpdated : r)));
+
+        // If the modal is open for this same record, update it too
+        setSelected((prevSelected) => {
+          if (!prevSelected) return prevSelected;
+          if (prevSelected._id !== updated._id) return prevSelected;
+          return { ...prevSelected, ...normalizedUpdated };
+        });
       } else {
         await fetchRegistrations();
       }
@@ -309,7 +322,7 @@ export default function Users() {
     </div>
 
     {/* ===== Footer Actions ===== */}
-    { selected.status =="pending"?(
+    {(selected.status || "pending").toLowerCase() === "pending" ? (
 
     
       <div className="flex flex-wrap gap-3 justify-end p-4 border-t bg-white/95 backdrop-blur sticky bottom-0">
@@ -336,8 +349,7 @@ export default function Users() {
       >
       Status  Cancel
       </button>
-    </div>):null
-    }
+    </div>) : null}
     
   </div>
 </div>
