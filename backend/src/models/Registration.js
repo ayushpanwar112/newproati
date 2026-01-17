@@ -18,6 +18,8 @@ const registrationSchema = new mongoose.Schema(
     paymentScreenshotUrl: { type: String, trim: true },
     email: { type: String, required: true, trim: true, lowercase: true },
     designation: { type: String, required: true },
+    memberId :{ type : String },
+    studentId : {type : String}
   },
   { timestamps: true }
 );
