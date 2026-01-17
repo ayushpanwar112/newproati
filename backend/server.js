@@ -21,14 +21,25 @@ const corsOptions = {
 }
 
 // Global middleware
-app.use(helmet())
+app.use(
+  helmet({
+    crossOriginResourcePolicy: { policy: "cross-origin" },
+  })
+)
 app.use(cors(corsOptions))
 app.options(/.*/, cors(corsOptions))
 app.use(express.json())
 app.use(morgan('dev'))
 
 // Static files (uploaded payment screenshots)
-app.use('/uploads', express.static('uploads'))
+app.use(
+  '/uploads',
+  express.static('uploads', {
+    setHeaders(res) {
+      res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin')
+    },
+  })
+)
 
 
 // Health check
