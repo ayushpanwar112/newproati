@@ -67,7 +67,7 @@ export default function RegistrationForm() {
       })
       if (screenshotFile) body.append('screenshot', screenshotFile)
 
-      const res = await fetch('http://localhost:4000/form/register', {
+      const res = await fetch('http://31.97.206.250/form/register', {
         method: 'POST',
         body
       })
