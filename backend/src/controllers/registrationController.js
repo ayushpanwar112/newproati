@@ -33,7 +33,7 @@ export async function createRegistration(req, res) {
     if (!country) missing.push('country')
     if (!state) missing.push('state')
     if (!city) missing.push('city')
-    if (!foodper) missing.push('foodper')
+    // if (!foodper) missing.push('foodper')
     if (!cate) missing.push('cate')
     if (!regFee) missing.push('regFee')
     if (!paymentmode) missing.push('paymentmode')

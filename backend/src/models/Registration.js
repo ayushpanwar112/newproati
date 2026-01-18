@@ -8,7 +8,7 @@ const registrationSchema = new mongoose.Schema(
     country: { type: String, required: true, trim: true },
     state: { type: String, required: true, trim: true },
     city: { type: String, required: true, trim: true },
-    foodper: { type: String, required: true, trim: true },
+    // foodper: { type: String, required: true, trim: true },
     phone: { type: String, trim: true },
     altphone: { type: String, trim: true },
     cate: { type: String, required: true, trim: true },
