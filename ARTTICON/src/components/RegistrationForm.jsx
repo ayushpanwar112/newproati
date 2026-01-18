@@ -381,6 +381,7 @@ import { gsap } from 'gsap'
 import axios from 'axios'
 import { BankDetails } from './BankDetails' 
 import SuccessModal from './SuccessModal'
+import { RegistrationFeeTable } from './RegistrationFeeTable'
 
 export default function RegistrationForm() {
   const [form, setForm] = useState({
@@ -492,6 +493,16 @@ export default function RegistrationForm() {
         data={responseDetails} 
         onClose={handleCloseModal} 
       />
+       {/* INFO */}
+    <div className="mb-8">
+      <h1 className="text-xl font-semibold text-gray-800 mb-1">
+        Please Read This Before Filling the Registration Form
+      </h1>
+      <p className="text-sm text-gray-600 mb-4">
+        Registration fees vary based on category and registration date.
+      </p>
+      <RegistrationFeeTable />
+    </div>
 
       <form ref={formRef} className="bg-white p-10 rounded-3xl shadow-2xl space-y-8 border border-gray-100" onSubmit={submit}>
         <div className="p-6 bg-gradient-to-r from-teal-50 to-emerald-50 rounded-2xl border border-teal-100">
