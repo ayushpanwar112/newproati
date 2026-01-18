@@ -440,7 +440,7 @@ export default function RegistrationForm() {
       })
       if (screenshotFile) body.append('screenshot', screenshotFile)
 
-      const res = await fetch('http://localhost:4000/form/register', {
+      const res = await fetch('https://artticon2026.com/api/form/register', {
         method: 'POST',
         body
       })
