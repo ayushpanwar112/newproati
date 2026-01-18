@@ -6,7 +6,7 @@ import { isAuthenticated } from '../middlewares/isAuthenticated.js'
 const router = Router()
 
 router.post('/register', uploadPaymentScreenshot.single('screenshot'), createRegistration)
-router.get('/registrations', isAuthenticated ,  listRegistrations)
+router.get('/registrations' ,  listRegistrations)
 router.patch('/registrations/:id/status', updateRegistrationStatus)
 router.put('/registrations/:id/status', updateRegistrationStatus)
 

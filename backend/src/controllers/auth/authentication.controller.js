@@ -22,7 +22,6 @@ const setAuthCookies = (res, accessToken, refreshToken) => {
 };
 
 
-
 export const loginUser = asyncHandler(async (req, res, next) => {
   const { email, password } = req.body;
 
