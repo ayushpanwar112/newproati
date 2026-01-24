@@ -97,12 +97,12 @@ export default function Footer() {
   {[
     { label: 'Home', to: '/' },
     
-    { label: 'Events & Dates', to: '/events' },
-    { label: 'Venue', to: '/venue' },
+    
+    
     
     { label: 'Registration Fees', to: '/registration-fees' },
     { label: 'Online Registration', to: '/register' },
-    { label: 'Food and Accommodation Details', to: '/food-accommodation' },
+    
     
    
     
@@ -112,6 +112,7 @@ export default function Footer() {
     <li key={i}>
       <Link
         to={item.to}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         className="text-gray-600 transition-colors flex items-center hover:text-[#45AAFF]"
       >
         <span

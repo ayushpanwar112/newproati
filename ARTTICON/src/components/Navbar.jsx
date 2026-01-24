@@ -33,16 +33,25 @@ export default function Navbar() {
               <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-center">
                 <span className="text-[#2E9550]">ARTTICON</span>{' '} 
                 <span className="text-amber-600">2026</span> </h1> </Link>
-                 <p className="mt-1 text-xs md:text-sm text-gray-700 italic font-bold font-[cursive] whitespace-nowrap tracking-wide">
+                 <p className="mt-2 ml-10 text-xs md:text-sm text-gray-700 italic font-medium font-cursive whitespace-nowrap tracking-wide">
                    more victory together...
                     </p> </div> 
+
+
+          {/* Right: email above Logo, vertically centered */} 
+          <div className="flex flex-col justify-center items-start"> 
+            {/* Email */} 
+            <div className="text-gray-600 text-[11px] sm:text-sm whitespace-nowrap -mt-2">
+            <strong> 📧 info@artticon2026.org</strong>
+              </div> 
 
                     {/* RIGHT LOGO */} 
                     <div className="flex justify-end items-center"> 
         <img src={aims} alt="AIMS Logo"
-         className="h-16 sm:h-20 md:h-28 object-contain relative top-3 ml-2 sm:ml-0" /> 
+         className="h-16 sm:h-20 md:h-28 object-contain relative top-2 ml-2 sm:ml-0" /> 
         </div> 
         </div> 
+        </div>
         </div>
 
     

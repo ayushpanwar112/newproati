@@ -495,10 +495,10 @@ export default function RegistrationForm() {
       />
        {/* INFO */}
     <div className="mb-8">
-      <h1 className="text-xl font-semibold text-gray-800 mb-1">
+      <h1 className="text-sm sm:text-2xl font-semibold text-gray-800 mb-1 whitespace-nowrap">
         Please Read This Before Filling the Registration Form
       </h1>
-      <p className="text-sm text-gray-600 mb-4">
+      <p className="text-[10px] sm:text-sm text-gray-600 mb-4 whitespace-nowrap">
         Registration fees vary based on category and registration date.
       </p>
       <RegistrationFeeTable />
@@ -609,7 +609,7 @@ export default function RegistrationForm() {
             {/* CONDITIONAL FIELD FOR ARTTI MEMBER */}
             {form.cate === 'ARTTI MEMBER' && (
                 <div className="animate-in fade-in slide-in-from-top-2 duration-300">
-                    <label className="block text-sm font-medium text-teal-700 mb-1 font-bold">ARTTI Member ID *</label>
+                    <label className="block text-sm  text-teal-700 mb-1 font-bold">ARTTI Member ID *</label>
                     <input
                         name="memberId"
                         value={form.memberId}
@@ -624,7 +624,7 @@ export default function RegistrationForm() {
             {/* CONDITIONAL FIELD FOR STUDENT */}
             {form.cate === 'student' && (
                 <div className="animate-in fade-in slide-in-from-top-2 duration-300">
-                    <label className="block text-sm font-medium text-teal-700 mb-1 font-bold">Student ID  *</label>
+                    <label className="block text-sm  text-teal-700 mb-1 font-bold">Student ID  *</label>
                     <input
                         name="studentId"
                         value={form.studentId}
@@ -669,14 +669,14 @@ export default function RegistrationForm() {
         <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm space-y-6">
           <h3 className="text-lg font-semibold text-gray-900"> Payment</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
+            
               {/* <label className="block text-sm font-medium text-gray-700 mb-1">Food Preference *</label> */}
               {/* <select name="foodper" value={form.foodper} onChange={update} required className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl">
                 <option value="">Select preference</option>
                 <option value="veg">Vegetarian</option>
                 <option value="nonveg">Non-Vegetarian</option>
               </select> */}
-            </div>
+            
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Registration Fee *</label>
               <input name="regFee" value={form.regFee} onChange={update} required className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl" placeholder="e.g. 2500"/>
@@ -699,7 +699,7 @@ export default function RegistrationForm() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Payment Screenshot (optional)</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Payment Screenshot *</label>
             <input
               type="file"
               accept="image/*"

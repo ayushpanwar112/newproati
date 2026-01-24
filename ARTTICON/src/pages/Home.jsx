@@ -1,30 +1,31 @@
-import  { useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-
-
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
 import { Hero } from '../components/Hero/Hero'
-import  img10 from '../assets/Gallery/img10.jpg'
 import ConferenceScheduleSection from '../components/Hero/ConferenceScheduleSection'
-import visionImage from '../assets/vision.jpg'
-import AbstractImage from "../assets/abstract.jpg";
-import secretaryImg from "../assets/Secratery.jpg";
-
-
 import { CountdownSection } from '../components/clock/CountdownSection'
+
+import img10 from '../assets/Gallery/img10.jpg'
+import visionImage from '../assets/vision.jpg'
+import AbstractImage from '../assets/abstract.jpg'
+import secretaryImg from '../assets/Secratery.jpg'
+import speakerBg from '../assets/ganga.jpg'
+
+
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
 
   const featuresRef = useRef()
-  const speakersRef = useRef()
+  
   const statsRef = useRef()
 
   
-
-  return (
+  
+ return (
     <div className="overflow-hidden">
       {/* Hero Section */}
      <Hero />
@@ -40,18 +41,10 @@ export default function Home() {
     <span className="text-gray-800">Radiotherapy</span>
   </h2>
 
-
-            {/* <div className="inline-block mb-8 w-full h-48 ">
-  <div className="bg-gradient-to-r from-[#3787c8] via-[#45AAFF] w-full h-48   flex flex-col justify-center items-center to-[#3787c8] py-4 rounded-xl shadow-lg">
-    <p className="text-3xl lg:text-4xl font-bold text-white tracking-wide">
-      From Vision to Precision
-    </p>
-  </div>
-</div> */}
 <div className="inline-block mb-8 w-full h-48 relative">
   
   <div
-    className="absolute inset-0 rounded-xl bg-center bg-cover"
+    className="absolute inset-0 rounded-xl bg-center bg-cover "
   style={{ backgroundImage: `url(${visionImage})` }}
   />
 
@@ -60,7 +53,7 @@ export default function Home() {
   <div className="relative z-10 w-full h-full flex items-center justify-center shadow-lg rounded-xl">
     <p className="text-3xl lg:text-4xl font-bold text-white tracking-wide">
    
-      <span clas> From Vision</span>   to Precision
+      <span className="Font-bold"> From Vision</span>   to Precision
     </p>
   </div>
 
@@ -93,6 +86,98 @@ export default function Home() {
           </div>*/}
         </div>
       </section>
+
+
+      
+      <section
+  className="relative py-20 bg-center bg-cover"
+  style={{ backgroundImage: `url(${speakerBg})` }}
+>
+  {/* Dark overlay */}
+  <div className="absolute inset-0 bg-black/50" />
+
+  {/* Content */}
+  <div className="relative z-10 max-w-6xl mx-auto px-6">
+    
+    <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-12 text-white">
+    Artticon 2026 Organizing Committee
+    </h2>
+    <div className="flex justify-center">
+  <div className="max-w-md w-full bg-gray/90 backdrop-blur rounded-2xl shadow-lg p-10 text-center">
+    
+    {/* Icon */}
+    <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-3xl">
+      🎤
+    </div>
+
+    {/* Text */}
+    <h3 className="text-2xl font-extrabold text-white mb-3">
+      Speakers Announcing Soon
+    </h3>
+
+    <p className="text-white text-sm leading-relaxed">
+      We are curating a distinguished panel of national and international experts.
+      Stay tuned for exciting announcements.
+    </p>
+  </div>
+</div>
+
+
+    {/*<div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {[
+        {
+          name: "Dr. Priya Sharma",
+          role: "AI Research Director",
+          org: "IIT Delhi",
+        },
+        {
+          name: "Prof. James Wilson",
+          role: "Healthcare Innovation",
+          org: "Stanford University",
+        },
+        {
+          name: "Dr. Maria Santos",
+          role: "Medical Physics",
+          org: "Johns Hopkins",
+        },
+        {
+          name: "Dr. Rajesh Kumar",
+          role: "Radiation Oncology",
+          org: "AIIMS",
+        },
+        {
+          name: "Dr. Emily Chen",
+          role: "Clinical Research",
+          org: "Mayo Clinic",
+        },
+      ].map((speaker, i) => (
+        <div
+          key={i}
+          className="bg-white/90 backdrop-blur rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-6 text-center hover:-translate-y-1"
+        >
+          {/* Avatar */}
+         {/* <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-xl font-bold">
+            {speaker.name.charAt(0)}
+          </div>
+
+          <h3 className="text-lg font-bold text-gray-900">
+            {speaker.name}
+          </h3>
+
+          <p className="text-sm text-gray-700 mt-1">
+            {speaker.role}
+          </p>
+
+          <p className="text-sm font-semibold text-sky-600 mt-1">
+            {speaker.org}
+          </p>
+        </div>
+      ))}
+    </div>*/}
+  </div>
+</section>
+
+
  {/* Welcome Message */}
       <section className="relative py-16 px-4 overflow-hidden">
       
@@ -129,14 +214,10 @@ export default function Home() {
 >
   Welcome Message
 </div>
-
-  
 </div>
 
 
-        
-
-        {/* Content card */}
+ {/* Content card */}
         <div className="bg-white rounded-2xl shadow-md p-6 md:p-8 text-gray-700 text-sm md:text-base leading-relaxed">
           <p className="mb-4">
             Dear Colleagues and Esteemed Guests,
@@ -228,68 +309,21 @@ export default function Home() {
 
   </div>
 </div>
-
-          
-        
-  
-    </section>
+</section>
   
    
 
-      {/* Speakers Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-slate-800 to-indigo-900 text-white hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Featured Speakers</h2>
-            <p className="text-xl text-blue-200">Learn from global pioneers and academic leaders in radiation therapy</p>
-          </div>
-          
-          <div ref={speakersRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                name: "Dr. Priya Sharma",
-                role: "AI Research Director, IIT Delhi",
-                bio: "Leading expert in machine learning applications in radiation therapy with 15+ years of research"
-              },
-              {
-                name: "Prof. James Wilson",
-                role: "Healthcare Innovation, Stanford",
-                bio: "Pioneer in digital health technologies and personalized radiation medicine approaches"
-              },
-              {
-                name: "Dr. Maria Santos",
-                role: "Medical Physics, Johns Hopkins",
-                bio: "Renowned researcher in treatment planning optimization and quality assurance"
-              },
-              {
-                name: "Dr. Rajesh Kumar",
-                role: "Radiation Oncology, AIIMS",
-                bio: "Expert in brachytherapy and advanced radiation treatment protocols"
-              }
-            ].map((speaker, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/10 hover:border-white/20">
-                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold text-lg">
-                  {speaker.name.split(' ').map(n => n[0]).join('')}
-                </div>
-                <h3 className="text-lg font-semibold text-center mb-2">{speaker.name}</h3>
-                <p className="text-blue-200 text-center text-sm mb-3">{speaker.role}</p>
-                <p className="text-sm text-gray-300 text-center leading-relaxed">{speaker.bio}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
 
 
       <ConferenceScheduleSection />
  <CountdownSection/>
     <section
-  className="py-20 bg-cover bg-center relative"
+  className="py-20 bg-cover bg-center relative z-10"
   style={{ backgroundImage: `url(${img10})` }}
 >
-  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 opacity-80"></div>
-  <div className="relative max-w-4xl mx-auto px-6 text-center text-white">
+  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 opacity-80 z-0 pointer-events-none"></div>
+  <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
     <h2 className="text-4xl font-bold mb-6">Ready to Join ARTTICON 2026?</h2>
     <p className="text-xl mb-8 max-w-2xl mx-auto tracking-wide leading-relaxed text-center text-white drop-shadow-lg font-sans">
       Don't miss this opportunity to be part of India's premier radiation therapy conference in the spiritual Himalayas.
@@ -297,7 +331,8 @@ export default function Home() {
     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
       <Link 
         to="/register" 
-        className="px-8 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 min-w-[200px]"
+        onClick={() => window.scrollTo(0, 0)}
+        className="relative z-20  pointer-events-auto px-8 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 min-w-[200px]"
       >
         Start Registration <span className="text-lg">🎯</span>
       </Link>
@@ -308,6 +343,56 @@ export default function Home() {
     
   </div>
 </section>
+
+{/* Quick Access Links Section */}
+<section className="py-20 bg-gray-100">
+  <div className="max-w-7xl mx-auto px-6">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-extrabold text-center mb-6 tracking-tight text-gray-800">
+      Quick Access Links
+    </h2>
+
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+      {[
+      
+      
+        { title: "About Venue", to: "/venue" },
+        { title: "Events and Dates", to: "/Events-Dates" },
+
+        { title: "About Rishikesh", to: "/about-Rishikesh" },
+
+        
+        
+        
+        { title: "Charms of Rishikesh", to: "/charms-of-Rishikesh" },
+        { title: "Travel in Uttrakhand", to: "/travel" },
+        
+        { title: "Connectivity", to: "/connectivity" },
+        
+        
+
+        { title: "Map to Reach the Venue", to: "/map" },
+        { title: "Food and Accommodation", to: "/food-accommodation" },
+        
+        
+      ].map((item, index) => (
+        <Link
+          key={index}
+          to={item.to}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 flex flex-col items-center text-center hover:-translate-y-1"
+        >
+          <div className="w-14 h-14 mb-4 rounded-lg bg-blue-500 text-white flex items-center justify-center text-xl group-hover:bg-sky-500 transition">
+            🔗
+          </div>
+          <p className="text-sm font-semibold text-gray-700 leading-snug">
+            {item.title}
+          </p>
+        </Link>
+      ))}
+    </div>
+  </div>
+</section>ll
+
 
 
     </div>

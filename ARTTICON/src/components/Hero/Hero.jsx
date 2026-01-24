@@ -67,7 +67,7 @@ export const Hero = () => {
 font-medium mb-6">
               📍ABV auditorium AIIMS Rishikesh, Uttarakhand • 25 to 27 sep , 2026
             </div>
-        {/* 🔥 DESCRIPTION */}
+      {/* 🔥 DESCRIPTION */}
         <p className="text-sm sm:text-base md:text-lg text-gray-200 max-w-4xl mx-auto leading-relaxed mb-8">
   <strong>Association of Radiation Therapists and Technologists of India. Advancing excellence in radiation therapy and imaging technology.</strong>
 </p>
@@ -76,8 +76,9 @@ font-medium mb-6">
         <div className="flex justify-center">
           <Link
             to="/register"
+            onClick={() => window.scrollTo(0, 0)}
             className="inline-flex items-center justify-center gap-3
-              px-10 py-4 rounded-full
+              px-6 py-2 rounded-full
               bg-[#45AAFF] hover:bg-[#066cc5]
               text-white text-xl font-semibold
               shadow-2xl hover:scale-105
@@ -88,7 +89,7 @@ font-medium mb-6">
             <span className="text-xl">→</span>
           </Link>
         </div>
-      </div>
+      </div> 
 
       {/* ===== CURVED SEPARATOR ===== */}
       <div className="absolute bottom-0 left-0 right-0">

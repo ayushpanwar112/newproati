@@ -7,17 +7,17 @@ export const BankDetails = () => {
       <div className="bg-white p-8 rounded-3xl shadow-xl border border-teal-100 space-y-6">
 
         {/* Header */}
-        <div className="border-b border-gray-100 pb-4">
-          <h2 className="text-2xl font-bold text-teal-800">
+        <div className="border-b border-gray-100 pb-4 ">
+          <h2 className="text-sm sm:text-2xl font-bold text-teal-800 whitespace-nowrap ">
             Bank Details for Payment
           </h2>
-          <p className="text-gray-500 text-sm italic">
+          <p className="text-[10px] sm:text-sm text-gray-500 italic whitespace-nowrap">
             Please complete your payment before filling out the form.
           </p>
         </div>
 
         {/* Bank Info */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-4 text-sm">
           <div className="space-y-1">
             <p className="text-gray-500 font-medium">Account Name</p>
             <p className="text-gray-900 font-bold uppercase text-xs">
@@ -55,7 +55,7 @@ export const BankDetails = () => {
         </div>
 
         {/* Helpline */}
-        <div className="flex items-center justify-between bg-teal-50 p-4 rounded-xl border border-teal-100">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 bg-teal-50 p-4 rounded-xl border border-teal-100">
           <span className="text-teal-800 font-medium">
             Helpline Number
           </span>
@@ -83,9 +83,13 @@ export const BankDetails = () => {
       />
     </div>
 
-    <p className="text-sm text-gray-500 mt-4">
-      Use any UPI app (GPay, PhonePe, Paytm)
-    </p>
+    <p className="text-sm text-gray-500 mt-4 text-center">
+       Use any UPI app
+  <span className="hidden sm:inline"> (GPay, PhonePe, Paytm)</span>
+  <span className="block sm:hidden mt-1">
+    GPay • PhonePe • Paytm
+  </span>
+     </p>
   </div>
 </div>
 
