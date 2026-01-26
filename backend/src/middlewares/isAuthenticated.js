@@ -77,3 +77,32 @@ async function handleAutoRefresh(refreshToken, req, res, next) {
     return next(new ErrorHandler("Session expired. Please login again.", 401));
   }
 }
+
+
+
+
+
+export const isAllowedRoles = (...allowedRoles) => {
+  return (req, res, next) => {
+    console.log(req.user , "user detais")
+    // 1. Check if user exists (set by your previous auth/login middleware)
+    if (!req.user) {
+      return res.status(401).json({ message: "Please login to access this resource" });
+    }
+
+    // 2. Check if the user's role is in the allowed list
+    if (!allowedRoles.includes(req.user.role)) {
+      return res.status(403).json({
+        message: `Role: ${req.user.role} is not authorized to access this resource`
+      });
+    }
+
+    next();
+  };
+};
+
+// router.route("/admin/user/:id").delete(
+//   isAuthenticatedUser, 
+//   isAllowedRoles("admin" , "user"), 
+//   deleteUser
+// );
