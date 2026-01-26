@@ -34,7 +34,7 @@ import DashboardLayout from "./layouts/DashboardLayout";
 import UploadVideo from "./pages/UploadVideo";
 import Users from "./pages/Users";
 import Settings from "./pages/Settings";
-import ProtectedRoute from "./routes/ProtectedRoute";
+import ProtectedRoute from "./route/ProtectedRoute";
 // import ProtectedRoute from "./components/ProtectedRoute";
 
 export default function App() {

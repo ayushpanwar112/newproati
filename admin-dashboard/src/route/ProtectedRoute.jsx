@@ -4,7 +4,7 @@ import { getCurrentUser } from '../service/auth';
 
 const ProtectedRoute = ({ children, allowedRoles }) => {
     const user = getCurrentUser();
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('accessToken');
 
     if (!token || !user) {
         return <Navigate to="/login" replace />;

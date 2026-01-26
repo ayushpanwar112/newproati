@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
+import API from "../service/axiosInstance";
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
+const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
 
 function classNames(...values) {
   return values.filter(Boolean).join(" ");
@@ -46,24 +47,52 @@ export default function Users() {
     return rows.filter((r) => String(r.status || "pending").toLowerCase() === filter);
   }, [rows, statusFilter]);
 
-  async function fetchRegistrations() {
-    try {
-      setLoading(true);
-      setError("");
-      const res = await fetch(`${API_BASE}/form/registrations`);
-      if (!res.ok) throw new Error(`Failed to load registrations (${res.status})`);
-      const data = await res.json();
-      setRegistrations(Array.isArray(data) ? data : []);
-    } catch (e) {
-      setError(e?.message || "Failed to load registrations");
-    } finally {
-      setLoading(false);
-    }
-  }
+  // async function fetchRegistrations() {
+  //   try {
+  //     setLoading(true);
+  //     setError("");
+  //     const res = await API(`/form/registrations`);
+  //     if (!res.ok) throw new Error(`Failed to load registrations (${res.status})`);
+  //     const data = await res.json();
+  //     setRegistrations(Array.isArray(data) ? data : []);
+  //   } catch (e) {
+  //     setError(e?.message || "Failed to load registrations");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // }
 
-  useEffect(() => {
-    fetchRegistrations();
-  }, []);
+  // useEffect(() => {
+  //   fetchRegistrations();
+  // }, []);
+
+
+  async function fetchRegistrations() {
+  try {
+    setLoading(true);
+    setError("");
+
+    const res = await API.get("/form/registrations");
+
+    // axios response data is already parsed
+    const data = res.data;
+
+    setRegistrations(Array.isArray(data) ? data : []);
+  } catch (e) {
+    setError(
+      e?.response?.data?.message ||
+      e?.message ||
+      "Failed to load registrations"
+    );
+  } finally {
+    setLoading(false);
+  }
+}
+
+
+useEffect(() => {
+  fetchRegistrations();
+}, []);
 
   async function updateStatus(id, nextStatus) {
     try {

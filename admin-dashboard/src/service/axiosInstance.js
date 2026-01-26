@@ -2,21 +2,23 @@ import axios from 'axios';
 
 // 1. Create the instance with base configurations
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api/v1', // Your backend URL
+  baseURL: 'http://localhost:5000', // Your backend URL
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
   },
+    withCredentials: true,
+
 });
 
 // 2. Request Interceptor: Automatically attach the token to every request
 API.interceptors.request.use(
   (config) => {
     // Get token from localStorage (or state manager like Redux)
-    const token = localStorage.getItem('token'); 
+    const accessToken = localStorage.getItem('accessToken'); 
     
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
+    if (accessToken) {
+      config.headers.Authorization = `Bearer ${accessToken}`;
     }
     return config;
   },
@@ -34,7 +36,7 @@ API.interceptors.response.use(
     if (status === 401) {
       // Unauthorized: Usually means token expired or not logged in
       console.error("Session expired. Redirecting to login...");
-      localStorage.removeItem('token');
+      localStorage.removeItem('accessToken');
       window.location.href = '/login'; 
     } else if (status === 403) {
       // Forbidden: This matches your "isAllowedRoles" error

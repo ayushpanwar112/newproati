@@ -5,10 +5,11 @@ import { generateAccessAndRefreshTokens } from "../../utils/jwtToken.js";
 import bcrypt from  "bcryptjs" 
 
 const setAuthCookies = (res, accessToken, refreshToken) => {
+  // console.log(  accessToken, refreshToken, "reached")
   const cookieOptions = {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
-    sameSite: "None",
+    sameSite:  process.env.NODE_ENV === "production" ?  "None" : "Lax",
     path: "/",
   };
  res.cookie("accessToken", accessToken, {
@@ -51,7 +52,7 @@ export const loginUser = asyncHandler(async (req, res, next) => {
     success: true,
     accessToken,
     refreshToken,
-    user: { id: user._id, name: user.name, email: user.email }
+    user: { id: user._id, name: user.name, email: user.email , role : user.role  , token : user.refreshToken }
   });
 });
 
