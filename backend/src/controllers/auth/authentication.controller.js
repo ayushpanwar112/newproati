@@ -30,11 +30,11 @@ export const loginUser = asyncHandler(async (req, res, next) => {
   }
 
   const user = await Registration.findOne({ email }).select("+password");
-  if (!user) return next(new ErrorHandler("Invalid credentials", 401));
+  if (!user) return next(new ErrorHandler("Invalid credentials", 404));
 
   // COMPARISON OUTSIDE: Done here
   const isMatch = await bcrypt.compare(password, user.password);
-  if (!isMatch) return next(new ErrorHandler("Invalid credentials", 401));
+  if (!isMatch) return next(new ErrorHandler("Invalid credentials", 404));
 
   // Generate new tokens
   const { accessToken, refreshToken } = generateAccessAndRefreshTokens(user._id);
