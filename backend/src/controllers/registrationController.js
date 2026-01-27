@@ -1,5 +1,7 @@
 import { Registration } from "../models/Registration.js"
 import bcrypt from 'bcryptjs'
+import { sendMail } from "../utils/nodemailer/sendEmail.js"
+
 
 const ALLOWED_STATUSES = new Set(["pending", "confirmed", "cancelled"])
 
@@ -112,9 +114,14 @@ export async function updateRegistrationStatus(req, res) {
       { new: true, runValidators: true }
     ).lean()
 
+   
+    
+
+
     if (!updated) {
       return res.status(404).json({ error: "Registration not found" })
     }
+    await sendMail(updated.email , updated.name)
 
     return res.json({ message: "Status updated", registration: updated })
   } catch (err) {
