@@ -98,7 +98,7 @@ export async function createRegistration(req, res) {
       studentId: cate === 'student' ? studentId : undefined,
     })
 if(doc){
-      await sendMail(doc.email , doc.name  ,'registration')
+      // await sendMail(doc.email , doc.name  ,'registration')
 
 
 
@@ -141,15 +141,15 @@ export async function updateRegistrationStatus(req, res) {
       return res.status(404).json({ error: "Registration not found" })
     }
 
-    if(status ==="confirmed"){
-      await sendMail(updated.email , updated.name  ,'confirmation')
-    }
-    else if(status ==="cancel"){
-      await sendMail(updated.email , updated.name  ,'cancel')
-    }
-    else{
-      await sendMail(updated.email , updated.name  ,'pending')
-    }
+    // if(status ==="confirmed"){
+    //   await sendMail(updated.email , updated.name  ,'confirmation')
+    // }
+    // else if(status ==="cancel"){
+    //   await sendMail(updated.email , updated.name  ,'cancel')
+    // }
+    // else{
+    //   await sendMail(updated.email , updated.name  ,'pending')
+    // }
 
     
 
