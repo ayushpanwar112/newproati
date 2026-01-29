@@ -1,6 +1,6 @@
 import { Registration } from "../models/Registration.js"
 import bcrypt from 'bcryptjs'
-import { sendMail } from "../utils/nodemailer/sendEmail.js"
+// import { sendMail } from "../utils/nodemailer/sendEmail.js"
 
 
 const ALLOWED_STATUSES = new Set(["pending", "confirmed", "cancelled"])
