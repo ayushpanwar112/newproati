@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import API from "../service/axiosInstance";
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://artticon2026.com/api";
 
 function classNames(...values) {
   return values.filter(Boolean).join(" ");
@@ -98,12 +98,9 @@ useEffect(() => {
     try {
       setUpdatingId(id);
       setError("");
-      const res = await fetch(`${API_BASE}/form/registrations/${id}/status`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ status: nextStatus }),
+      const res = await API.put(`/form/registrations/${id}/status`, {
+
+        status: nextStatus,
       });
 
       const payload = await res.json().catch(() => null);

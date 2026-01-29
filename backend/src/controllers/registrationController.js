@@ -60,6 +60,23 @@ export async function createRegistration(req, res) {
       ? `/uploads/payments/${req.file.filename}`
       : undefined
 
+      const existingTid = await Registration.findOne({trnsNo : trnsNo })
+
+      if(existingTid){
+        return res.status(403).json({
+          error : "payment already exists",
+          success : false
+        })
+      }
+      const existingUser = await Registration.findOne({email : email })
+
+      if(existingUser){
+        return res.status(403).json({
+          error : "email already exists",
+          success : false
+        })
+      }
+
     const doc = await Registration.create({
       name,
       email,
@@ -80,6 +97,12 @@ export async function createRegistration(req, res) {
       memberId: cate === 'ARTTI MEMBER' ? memberId : undefined,
       studentId: cate === 'student' ? studentId : undefined,
     })
+if(doc){
+      await sendMail(doc.email , doc.name  ,'registration')
+
+
+
+}
 
     return res.status(201).json({ message: 'Registered successfully', id: doc._id, paymentScreenshotUrl })
   } catch (err) {
@@ -102,6 +125,7 @@ export async function updateRegistrationStatus(req, res) {
   try {
     const { id } = req.params || {}
     const { status } = req.body || {}
+    console.log(status ,"staus")
 
     const nextStatus = String(status || "").toLowerCase().trim()
     if (!ALLOWED_STATUSES.has(nextStatus)) {
@@ -113,15 +137,21 @@ export async function updateRegistrationStatus(req, res) {
       { status: nextStatus },
       { new: true, runValidators: true }
     ).lean()
-
-   
-    
-
-
     if (!updated) {
       return res.status(404).json({ error: "Registration not found" })
     }
-    await sendMail(updated.email , updated.name)
+
+    if(status ==="confirmed"){
+      await sendMail(updated.email , updated.name  ,'confirmation')
+    }
+    else if(status ==="cancel"){
+      await sendMail(updated.email , updated.name  ,'cancel')
+    }
+    else{
+      await sendMail(updated.email , updated.name  ,'pending')
+    }
+
+    
 
     return res.json({ message: "Status updated", registration: updated })
   } catch (err) {
