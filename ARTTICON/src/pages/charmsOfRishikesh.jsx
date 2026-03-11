@@ -54,7 +54,7 @@ export default function CharmsOfRishikesh() {
 
       {/* Header */}
       <div
-       className="relative py-24 text-center bg-[length:120%] bg-no-repeat bg-[position:15%_center]"
+        className="relative py-14 md:py-24 text-center bg-cover bg-center"
         style={{ backgroundImage: `url(${Background})` }}
       >
         <div className="absolute inset-0 bg-black/50" />
@@ -82,10 +82,12 @@ export default function CharmsOfRishikesh() {
 
             {/* Content Right */}
             <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-center">
-              <h2 className="text-2xl md:text-3xl  font-bold text-gray-900 mb-4">
+              <h2 className="text-lg md:text-xl font-semibold text-black mb-3"
+>
                 {place.title}
               </h2>
-              <p className="text-gray-950 text-base md:text-lg leading-relaxed ">
+              <p className="text-sm md:text-base text-black leading-relaxed"
+>
                 {place.desc}
               </p>
             </div>

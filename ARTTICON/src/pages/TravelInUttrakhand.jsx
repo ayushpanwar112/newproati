@@ -20,7 +20,7 @@ export default function TravelInUttarakhand() {
    
          {/* Header with Background Image */}
          <div
-           className="relative py-24 text-center bg-[length:120%] bg-no-repeat bg-[position:15%_center]"
+           className="relative py-14 md:py-24 text-center bg-cover bg-center"
            style={{ backgroundImage: `url(${Background})` }}
          >
            {/* Overlay */}
@@ -43,10 +43,10 @@ export default function TravelInUttarakhand() {
           </div>
 
           <div className="p-6">
-            <h2 className="text-2xl font-bold text-gray-800 mb-3">
+            <h2 className="text-xl font-bold text-gray-800 mb-2">
               Char Dham Yatra
             </h2>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 text-sm leading-relaxed">
               The Char Dham Yatra comprises Yamunotri, Gangotri, Kedarnath, and Badrinath,
               representing the most sacred pilgrimage circuit in Uttarakhand.
               This spiritual journey attracts millions of devotees every year and

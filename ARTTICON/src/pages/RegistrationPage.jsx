@@ -31,6 +31,7 @@ export default function RegistrationPage() {
               <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
               Early Bird Pricing
             </div>
+            
             <div className="flex items-center">
               <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
               Certificate Included

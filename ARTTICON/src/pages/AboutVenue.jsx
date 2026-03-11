@@ -9,7 +9,7 @@ export default function AboutVenue() {
 
       {/* Header with Background Image */}
       <div
-        className="relative py-24 text-center bg-[length:120%] bg-no-repeat bg-[position:15%_center]"
+       className="relative py-14 md:py-24 text-center bg-cover bg-center"
         style={{ backgroundImage: `url(${Background})` }}
       >
         {/* Overlay */}
@@ -33,19 +33,27 @@ export default function AboutVenue() {
           </div>
 
           {/* Text */}
-          <div className="p-6 md:p-8 text-gray-950 leading-relaxed space-y-4">
+          <div className="text-sm md:text-base text-gray-800 leading-relaxed"
+>
            {/* Address */}
-      <div className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">ADDRESS:</h2>
-        <p className="text-gray-700 leading-relaxed">
-          <strong className="font-bold">Atal Bihari Vajpayee Auditorium, AIIMS Rishikesh,  
-          Virbhadra, Rishikesh, Uttarakhand 249203, India</strong>
-        </p>
-      </div>
+      <div className="mt-8 md:mt-12">
+  <h2 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 tracking-wide">
+    Venue Address
+  </h2>
+
+  <p className="text-sm md:text-base text-gray-800 leading-relaxed">
+    <strong>
+      Atal Bihari Vajpayee Auditorium, AIIMS Rishikesh,
+      Virbhadra, Rishikesh, Uttarakhand 249203, India
+    </strong>
+  </p>
+</div>
+
 
       {/* Venue Description */}
-      <div className="mb-8">
-        <p className="text-gray-950 leading-relaxed">
+      <div className="mb-8 mt-2">
+       <p className="text-sm md:text-base text-gray-800 leading-relaxed">
+
           The Atal Bihari Vajpayee Auditorium is a premier conference and event venue located within AIIMS Rishikesh, Uttarakhand. 
           Known for its modern facilities, spacious layout, and advanced audiovisual technology, the auditorium is ideal for hosting 
           academic conferences, seminars, workshops, cultural programs, and large-scale gatherings. Its serene surroundings in the 
@@ -55,11 +63,13 @@ export default function AboutVenue() {
 
       {/* Key Features & Specifications */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">Key Features & Specifications</h2>
+        <h2 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 tracking-wide">
+          Key Features & Specifications</h2>
 
         <div className="mb-4">
-          <h3 className="font-semibold mb-1">Location:</h3>
-          <p className="text-gray-950 leading-relaxed">
+          <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-1">Location:</h3>
+<p className="text-sm md:text-base text-gray-800 leading-relaxed">
+
             Strategically located within the AIIMS Rishikesh campus, the auditorium offers easy accessibility 
             from the city center and major transport hubs. Rishikesh is well connected by road and rail, 
             with Dehradun Airport approximately 25 km away, making it convenient for both national and international attendees.
@@ -68,7 +78,8 @@ export default function AboutVenue() {
 
         <div className="mb-4">
           <h3 className="font-semibold mb-1">Architectural Design:</h3>
-          <p className="text-gray-950 leading-relaxed">
+     <p className="text-sm md:text-base text-gray-800 leading-relaxed">
+
             The auditorium features contemporary design principles that combine functionality with aesthetic appeal. 
             It is designed to accommodate large audiences comfortably while providing excellent acoustics, 
             stage visibility, and modern amenities for organizers and participants.
@@ -77,7 +88,8 @@ export default function AboutVenue() {
 
         <div className="mb-4">
           <h3 className="font-semibold mb-1">Capacity & Facilities:</h3>
-          <p className="text-gray-950 leading-relaxed">
+         <p className="text-sm md:text-base text-gray-800 leading-relaxed">
+
             The Atal Bihari Vajpayee Auditorium has a seating capacity suitable for large conferences, workshops, and seminars. 
             It includes a main hall, multiple breakout rooms, high-speed internet connectivity, state-of-the-art audio-visual 
             equipment, and ample parking facilities. The auditorium is fully equipped to support hybrid events with online streaming options.
@@ -86,7 +98,8 @@ export default function AboutVenue() {
 
         <div>
           <h3 className="font-semibold mb-1">Surroundings:</h3>
-          <p className="text-gray-950 leading-relaxed">
+  <p className="text-sm md:text-base text-gray-800 leading-relaxed">
+
             Nestled in the spiritual city of Rishikesh, the auditorium offers a tranquil environment along the banks of the Ganges, 
             complemented by breathtaking views of the Garhwal Himalayas. Attendees can enjoy a unique blend of academic rigor and 
             cultural immersion during their visit.

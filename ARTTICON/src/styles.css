@@ -14,9 +14,9 @@ body {
     margin: 2rem auto;
     padding: 1rem;
 }
+
 .input {
-  @apply w-full h-11 px-4 text-sm border border-gray-300 rounded-lg
-         bg-white focus:outline-none focus:ring-2 focus:ring-teal-500;
+    @apply w-full h-11 px-4 text-sm border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-teal-500;
 }
 
 
@@ -43,4 +43,38 @@ body {
 .group:hover .swiper-button-prev,
 .group:hover .swiper-button-next {
     opacity: 1;
+}
+
+.marquee {
+    white-space: nowrap;
+    display: inline-block;
+    padding: 8px 0;
+    animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.marquee {
+    white-space: nowrap;
+    display: inline-block;
+    padding: 8px 0;
+    animation: scroll-right 20s linear infinite;
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
 }

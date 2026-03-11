@@ -9,7 +9,7 @@ export default function AboutRishikesh() {
 
       {/* Header with Background Image */}
       <div
-        className="relative py-24 text-center bg-[length:120%] bg-no-repeat bg-[position:15%_center]"
+        className="relative py-14 md:py-24 text-center bg-cover bg-center"
         style={{ backgroundImage: `url(${Background})` }}
       >
         {/* Overlay */}
@@ -32,14 +32,18 @@ export default function AboutRishikesh() {
           />
 
           {/* Text */}
-          <div className="p-6 text-neutral-950 text-[16px] leading-relaxed space-y-4">
-            <p>
+       
+       
+       <div className="p-4 sm:p-6 md:p-8 text-gray-800 text-[14px] sm:text-[15px] md:text-[17px] leading-6 sm:leading-7 md:leading-8 space-y-3">
+
+            <p className="text-justify">
              <strong className="font-bold"> Rishikesh</strong>, nestled in the foothills of the Himalayas along the sacred Ganges, has been a spiritual hub for centuries. 
               Its history is steeped in legend and devotion, with references in ancient scriptures as a place where sages meditated
               
               and sought enlightenment. Over time, it became a center for Hindu pilgrimage, drawing devotees to its many 
               ashrams and temples, including the iconic Triveni Ghat and the historic Laxman Jhula.</p>
-              <p>The city’s culture reflects a blend of spirituality and simplicity, where yoga, meditation, and Vedic teachings are woven into daily life. Festivals like Ganga 
+
+              <p className="text-justify">The city’s culture reflects a blend of spirituality and simplicity, where yoga, meditation, and Vedic teachings are woven into daily life. Festivals like Ganga 
               Aarti transform the riverbanks into vibrant displays of devotion, while local traditions of music, art, 
               and vegetarian cuisine preserve the region’s ancient ethos. Today, Rishikesh stands as both a sanctuary for
                seekers of inner peace and a living repository of India’s spiritual heritage.

@@ -5,13 +5,13 @@ import hotelImg from "../assets/hotel.jpg";
 
 
 
-export default function AboutRishikesh() {
+export default function FoodAccommodation() {
   return (
     <div className="bg-gray-100 min-h-screen">
 
       {/* Header with Background Image */}
       <div
-        className="relative py-24 text-center bg-[length:120%] bg-no-repeat bg-[position:15%_center]"
+        className="relative py-14 md:py-24 text-center bg-cover bg-center"
         style={{ backgroundImage: `url(${Background})` }}
       >
         {/* Overlay */}
@@ -22,49 +22,56 @@ export default function AboutRishikesh() {
         </h1>
       </div>
 
-     {/* Content */}
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+    <div className="max-w-6xl mx-auto px-4 py-12">
+  <div className="grid md:grid-cols-2 gap-8">
 
-          {/* Images */}
-          <div className="grid md:grid-cols-2 gap-4">
-            <img
-              src={foodImg}
-              alt="Local Cuisine"
-              className="w-full h-64 object-cover"
-            />
-            <img
-              src={hotelImg}
-              alt="Hotel Accommodation"
-              className="w-full h-64 object-cover"
-            />
-          </div>
+    {/* Food Card */}
+    <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+      <img
+        src={foodImg}
+        alt="Local Cuisine"
+        className="w-full h-72 object-cover"
+      />
+      <div className="p-6 text-black space-y-3">
+        
+        <p className="text-sm sm:text-base leading-relaxed">
+          <strong>Rishikesh</strong> offers a wide variety of food options ranging from
+          traditional North Indian cuisine to international vegetarian dishes.
+        </p>
 
-          {/* Text */}
-          <div className="p-6 md:p-8 text-gray-950 space-y-4 leading-relaxed">
-            <p>
-              <strong>Rishikesh</strong> offers a wide variety of food options ranging from
-              traditional North Indian cuisine to international vegetarian dishes.
-            </p>
-
-            <p>
-              Numerous cafes and restaurants near the Ganga provide hygienic,
-              sattvic, and nutritious meals suited for all preferences.
-            </p>
-
-            <p>
-              Accommodation options include hotels, guest houses, and budget stays
-              located near the conference venue and major city areas.
-            </p>
-
-            <p><strong>
-              Detailed accommodation information and booking assistance will be
-              shared with registered delegates.</strong>
-            </p>
-          </div>
-
-        </div>
+        <p className="text-sm sm:text-base leading-relaxed">
+          Numerous cafes and restaurants near the Ganga provide hygienic,
+          sattvic, and nutritious meals suited for all preferences.
+        </p>
       </div>
     </div>
+
+    {/* Accommodation Card */}
+    <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+      <img
+        src={hotelImg}
+        alt="Hotel Accommodation"
+        className="w-full h-72 object-cover"
+      />
+      <div className="p-6 text-black space-y-3">
+        
+        <p className="text-sm sm:text-base leading-relaxed">
+          Accommodation options include hotels, guest houses, and budget stays
+          located near the conference venue and major city areas.
+        </p>
+
+        <p className="text-sm sm:text-base leading-relaxed font-semibold">
+          Detailed accommodation information and booking assistance will be
+          shared with registered delegates.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+        </div>
+    
   );
 }

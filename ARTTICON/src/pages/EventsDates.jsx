@@ -12,7 +12,7 @@ export default function EventsDates() {
 
       {/* Header with Background Image */}
       <div
-        className="relative py-24 text-center bg-[length:120%] bg-no-repeat bg-[position:15%_center]"
+      className="relative py-14 md:py-24 text-center bg-cover bg-center"
         style={{ backgroundImage: `url(${Background})` }}
       >
         {/* Overlay */}
@@ -39,7 +39,8 @@ export default function EventsDates() {
           
 
           {/* Text */}
-          <div className="p-6 md:p-8 text-gray-950 space-y-4 leading-relaxed">
+          <div className="p-5 md:p-8 text-black space-y-5 leading-relaxed text-sm md:text-base">
+
             <p>
               ARTTICON 2026 will be held from <strong>25th to 27th September 2026 </strong>
               at <strong>AIIMS Rishikesh, Uttarakhand</strong>.

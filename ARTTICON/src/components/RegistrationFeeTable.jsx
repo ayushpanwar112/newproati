@@ -10,7 +10,7 @@ export const RegistrationFeeTable = () => {
             <th className="border px-4 py-3 font-semibold">
               EARLY REGISTRATION
               <br />
-              <span className="text-xs font-normal">Up to 28th Feb</span>
+              <span className="text-xs font-normal">Up to 15th March</span>
             </th>
             <th className="border px-4 py-3 font-semibold">
               LATE REGISTRATION

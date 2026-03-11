@@ -1,109 +1,170 @@
-import { Link } from 'react-router-dom'
-import heroImg from '../../assets/hero3.jpg'
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import heroImg from "../../assets/hero3.jpg";
 
 export const Hero = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <section
-  className="
-    relative
-    flex items-center justify-center
-    overflow-hidden
-    min-h-[50vh]      /* smaller for mobile */
-    sm:min-h-[65vh]
-    md:min-h-[80vh] 
+    <>
+      <section className="min-h-[95vh] flex flex-row">
 
-  "
-  style={{
-    backgroundImage: `url(${heroImg})`,
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover'
-  }}
->
+        {/* LEFT SIDE – Image (40%) */}
+        <div
+       className="w-[45%] md:w-[40%] bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroImg})` }}
+        />
 
+        {/* RIGHT SIDE – Content (60%) */}
+        <div className="w-[55%] md:w-[60%] bg-white flex">
+          <div className="flex-1 px-4 md:px-16 py-10 md:py-16 flex flex-col justify-between">
 
-    
-      {/* ===== STRONG DARK OVERLAY (keeps image visible) ===== */}
-      <div className="absolute inset-0 bg-[#1F2933]/70" />
+            {/* Title Block */}
+            <div className="space-y-8">
 
-      {/* ===== CONTENT ===== */}
-      <div className="
-  relative z-10
-  max-w-5xl mx-auto
-  px-4 sm:px-6
-  py-20 sm:py-32
-  text-center text-white
-">
+              <div className="leading-[1.05]"> 
+                <h1 className="text-3xl sm:text-4xl md:text-8xl font-extrabold text-red-700">
+                  ARTTICON 2026 </h1>
+                 <p className="mt-6 text-sm sm:text-base md:text-2xl text-gray-700 italic font-bold whitespace-nowrap tracking-wide text-right" 
+              style={{ fontFamily: "cursive" }} > more victory together... </p> </div>
 
+            {/* label Section */}
+            <div className="mt-10 md:mt-25 space-y-8">
+              {/* Conference Label */}
+              <p className="mt-10 text-xs sm:text-sm md:text-xl font-bold tracking-[3px] uppercase text-black">
+                11th International & 30th National Conference
+              </p>
 
-        {/* 🔥 HIGHLIGHT BADGE */}
-        <span
-          className="inline-block mb-8 px-6 py-2 rounded-full
-          text-sm md:text-base font-semibold tracking-wide
-          bg-white/20 backdrop-blur-md
-          border border-white/30 shadow-lg"
-        >
-          11th International & 30th National Conference
-        </span>
-
-        {/* 🔥 MAIN TITLE */}
-      <h1 className="
-  text-3xl        /* mobile smaller */
-  sm:text-4xl
-  md:text-6xl
-  lg:text-8xl
-  font-extrabold
-  leading-snug    /* tighter on mobile */
-  sm:leading-tight
-  md:leading-tight
-  mb-6            /* smaller margin on mobile */
-">
-  <span className="block text-white">ARTTICON</span>
-  <span className="block text-[#F57C00] drop-shadow-lg">2026</span>
-</h1>
-
-
-<div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-600 text-sm sm:text-base
-font-medium mb-6">
-              📍ABV auditorium AIIMS Rishikesh, Uttarakhand • 25 to 27 sep , 2026
+              {/* Subtitle */}
+              <p className="text-m sm:text-sm md:text-xl font-semibold text-black leading-relaxed max-w-xl">
+                Association of Radiation Therapists and Technologists of India.
+              </p>
             </div>
-      {/* 🔥 DESCRIPTION */}
-        <p className="text-sm sm:text-base md:text-lg text-gray-200 max-w-4xl mx-auto leading-relaxed mb-8">
-  <strong>Association of Radiation Therapists and Technologists of India. Advancing excellence in radiation therapy and imaging technology.</strong>
-</p>
+            </div>
 
-        {/* 🔥 CTA */}
-        <div className="flex justify-center">
-          <Link
-            to="/register"
-            onClick={() => window.scrollTo(0, 0)}
-            className="inline-flex items-center justify-center gap-3
-              px-6 py-2 rounded-full
-              bg-[#45AAFF] hover:bg-[#066cc5]
-              text-white text-xl font-semibold
-              shadow-2xl hover:scale-105
-              transition-all duration-300"
-          >
-           Register Now
+            {/* Bottom Section */}
+            <div className="mt-16 space-y-8">
 
-            <span className="text-xl">→</span>
-          </Link>
+              {/* Venue */}
+              <div className="flex items-start gap-3">
+                {/* Location Icon */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-5 h-5 text-red-600 mt-1"
+                >
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" />
+                </svg>
+
+                <div>
+                  <p className="uppercase text-xl font-bold tracking-wide text-black">
+                    VENUE
+                  </p>
+                  <p className="font-medium text-sm md:text-lg text-black leading-snug">
+                    ABV Auditorium,
+                    
+                    AIIMS Rishikesh
+                  </p>
+                </div>
+              </div>
+
+              {/* Date */}
+              <div className="flex items-start gap-3">
+                {/* Calendar Icon */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-5 h-5 text-red-600 mt-1"
+                >
+                  <path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a3 3 0 0 1 3 3v11a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h1V3a1 1 0 0 1 1-1zm12 8H5v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8z" />
+                </svg>
+
+                <div>
+                  <p className="uppercase text-xl font-bold tracking-wide text-black">
+                    DATE
+                  </p>
+                  <p className="font-medium text-sm md:text-lg text-black leading-snug">
+                    25th – 27th September 2026
+                  </p>
+                </div>
+              </div>
+
+              {/* CTA */}
+              <Link
+                to="/register"
+                onClick={() => window.scrollTo(0, 0)}
+                className="inline-flex items-center px-3 py-1 md:px-8 md:py-3 bg-red-700 hover:bg-black text-white font-semibold tracking-wide transition duration-300"
+              >
+                REGISTER NOW →
+              </Link>
+            </div>
+          </div>
         </div>
-      </div> 
+      </section>
 
-      {/* ===== CURVED SEPARATOR ===== */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg
-          viewBox="0 0 1440 120"
-          className="w-full h-24"
-          xmlns="http://www.w3.org/2000/svg"
+      {showPopup && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+    <div className="relative bg-white max-w-lg w-full rounded-2xl shadow-2xl p-8">
+
+      <button
+        onClick={() => setShowPopup(false)}
+        className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-xl"
+      >
+        ×
+      </button>
+
+      <div className="text-sm leading-relaxed text-black space-y-4">
+
+        <p className="font-semibold">
+          Greetings from the ARTTICON 2026 Team!
+        </p>
+
+        <p>
+          First of all, thank you very much for your great support and enthusiastic response to the Early Bird Registration.
+        </p>
+
+        <p>
+          Considering the large number of requests received, the Organizing Committee has decided to extend the Early Bird Registration deadline for <span className="font-semibold">ARTTICON 2026 – Rishikesh</span> till <span className="font-semibold text-red-600">15th March 2026</span>.
+        </p>
+
+        <p>
+          We encourage all delegates to take advantage of this extended opportunity and register at the discounted fee.
+        </p>
+
+        <p className="font-semibold text-red-600">
+          Please note: No further extension will be provided.
+        </p>
+
+        <a
+          href="https://artticon2026.com/register"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block text-blue-700 font-medium underline"
         >
-          <path
-            fill="white"
-            d="M0 0L48 8C96 16 192 32 288 37.3C384 43 480 37 576 32C672 27 768 21 864 24C960 27 1056 37 1152 42.7C1248 48 1344 48 1392 48L1440 48V120H0Z"
-          />
-        </svg>
+          🔗 https://artticon2026.com/register
+        </a>
+
+        <p className="pt-2">
+          Thank you<br />
+          <span className="font-semibold">ARTTICON 2026 Team</span>
+        </p>
+
       </div>
-    </section>
-  )
-}
+    </div>
+  </div>
+)}
+        
+    
+    </>
+  );
+};

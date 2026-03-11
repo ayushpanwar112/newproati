@@ -7,6 +7,7 @@ import { Hero } from '../components/Hero/Hero'
 import ConferenceScheduleSection from '../components/Hero/ConferenceScheduleSection'
 import { CountdownSection } from '../components/clock/CountdownSection'
 
+
 import img10 from '../assets/Gallery/img10.jpg'
 import visionImage from '../assets/vision.jpg'
 import AbstractImage from '../assets/abstract.jpg'
@@ -36,8 +37,8 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           {/* Conference Theme Title */}
           <div className="text-center mb-16 flex flex-col items-center">
-  <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-wide mb-4 text-center">
-    <span className="text-[#2E9550]">Revolutionizing</span>{' '}
+  <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-wide mb-6 text-center">
+    <span className="text-gray-800">Revolutionizing</span>{' '}
     <span className="text-gray-800">Radiotherapy</span>
   </h2>
 
@@ -72,7 +73,7 @@ export default function Home() {
               <div className="text-gray-600 font-medium">RT Professionals</div>
             </div>
             <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-100">
-              <div className="stat-number text-4xl font-bold text-cyan-600 mb-2">0</div>
+            <div className="stat-number text-4xl font-bold text-cyan-600 mb-2">0</div>
               <div className="text-gray-600 font-medium">Expert Speakers</div>
             </div>
             <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100">
@@ -90,6 +91,7 @@ export default function Home() {
 
       
       <section
+      id="organizing-committee"
   className="relative py-20 bg-center bg-cover"
   style={{ backgroundImage: `url(${speakerBg})` }}
 >
@@ -104,23 +106,14 @@ export default function Home() {
     </h2>
     <div className="flex justify-center">
   <div className="max-w-md w-full bg-gray/90 backdrop-blur rounded-2xl shadow-lg p-10 text-center">
-    
-    {/* Icon */}
-    <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-3xl">
-      🎤
-    </div>
-
-    {/* Text */}
-    <h3 className="text-2xl font-extrabold text-white mb-3">
-      Speakers Announcing Soon
-    </h3>
-
-    <p className="text-white text-sm leading-relaxed">
-      We are curating a distinguished panel of national and international experts.
-      Stay tuned for exciting announcements.
-    </p>
+    <p className="text-white text-center text-lg">
+  Organizing Committee details will be announced soon.
+  <br />
+  Please stay tuned for updates.
+</p> 
   </div>
 </div>
+
 
 
     {/*<div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -179,7 +172,9 @@ export default function Home() {
 
 
  {/* Welcome Message */}
-      <section className="relative py-16 px-4 overflow-hidden">
+      <section 
+      id="welcome-message"
+      className="relative py-16 px-4 overflow-hidden">
       
       {/* Background image */}
       <div
@@ -319,6 +314,7 @@ export default function Home() {
       <ConferenceScheduleSection />
  <CountdownSection/>
     <section
+    id="brochure"
   className="py-20 bg-cover bg-center relative z-10"
   style={{ backgroundImage: `url(${img10})` }}
 >
@@ -391,7 +387,7 @@ export default function Home() {
       ))}
     </div>
   </div>
-</section>ll
+</section>
 
 
 

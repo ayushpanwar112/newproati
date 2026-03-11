@@ -13,7 +13,7 @@ export default function Connectivity() {
 
       {/* Header with Background Image */}
       <div
-        className="relative py-24 text-center bg-[length:120%] bg-no-repeat bg-[position:15%_center]"
+         className="relative py-14 md:py-24 text-center bg-cover bg-center"
         style={{ backgroundImage: `url(${Background})` }}
       >
         {/* Overlay */}
@@ -37,11 +37,13 @@ export default function Connectivity() {
             />
             <div className="p-6 text-gray-950">
               <h2 className="text-xl font-bold mb-3">By Air</h2>
-              <p>
+              <p className="text-sm sm:text-base leading-relaxed">
+
                 Jolly Grant Airport, Dehradun, is the nearest airport to
                 Rishikesh, located approximately 21 kilometers away.
               </p>
-              <p className="mt-2">
+              <p className="mt-2 text-sm sm:text-base leading-relaxed">
+
                 The airport offers regular flights from Delhi and other
                 major cities, making travel quick and convenient.
               </p>
@@ -57,11 +59,13 @@ export default function Connectivity() {
             />
             <div className="p-6 text-gray-950">
               <h2 className="text-xl font-bold mb-3">By Train</h2>
-              <p>
+              <p className="text-sm sm:text-base leading-relaxed">
+
                 Rishikesh Railway Station connects the city to Haridwar
                 and Dehradun via regular train services.
               </p>
-              <p className="mt-2">
+            <p className="mt-2 text-sm sm:text-base leading-relaxed">
+
                 Haridwar Junction, about 25 km away, is a major rail hub
                 with excellent connectivity across India.
               </p>
@@ -77,11 +81,13 @@ export default function Connectivity() {
             />
             <div className="p-6 text-gray-950">
               <h2 className="text-xl font-bold mb-3">By Road</h2>
-              <p>
+              <p className="text-sm sm:text-base leading-relaxed">
+
                 Rishikesh is well connected by road to Haridwar,
                 Dehradun, Mussoorie, and major North Indian cities.
               </p>
-              <p className="mt-2">
+              <p className="mt-2 text-sm sm:text-base leading-relaxed">
+
                 Government and private buses, taxis, and shared vehicles
                 ensure smooth and affordable travel.
               </p>

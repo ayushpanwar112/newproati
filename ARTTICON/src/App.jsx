@@ -17,6 +17,8 @@ import EventsDates from "./pages/EventsDates"
 import Travel from "./pages/TravelInUttrakhand"
 import Connectivity from "./pages/Connectivity"
 import FoodAccommodation from "./pages/FoodAccomodation"
+import AbstractGuidelines from './pages/AbstractGuidelines'
+import AbstractSubmision from './pages/AbstractSubmission'
 
 
 
@@ -38,7 +40,8 @@ export default function App() {
           <Route path="/travel" element={<Travel />} />
           <Route path="/connectivity" element={<Connectivity />} />
           <Route path="/food-accommodation" element={<FoodAccommodation />} />
-         
+         <Route path="/abstract-submission" element={<AbstractSubmision />} />
+         <Route path="/abstract-guidelines" element={<AbstractGuidelines />} />
            
         </Routes>
          <Gallery />
