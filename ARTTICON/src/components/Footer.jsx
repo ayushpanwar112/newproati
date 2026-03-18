@@ -48,83 +48,12 @@ export default function Footer() {
             </p>
 
             <div className="flex space-x-4">
-              {[
-  {
-    icon: faEnvelope,
-    label: 'Email',
-    href: 'mailto:info@artticon2026.org',
-  },
-  {
-    icon: faInstagram,
-    label: 'Instagram',
-    href: 'https://www.instagram.com/artticon2026',
-  },
-  {
-    icon: faFacebookF,
-    label: 'Facebook',
-    href: 'https://www.facebook.com/',
-  },
-  {
-    icon: faLinkedinIn,
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/',
-  },
-]
-.map((item, i) => (
-                <a
-                  key={i}
-                  href={item.href}
-                  aria-label={item.label}
-                  className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center transition-colors hover:bg-[#E6F3FF] hover:text-[#1D8FE1]"
-                  target={item.href.startsWith('http') ? '_blank' : undefined}
-                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-
-                >
-                  <FontAwesomeIcon icon={item.icon} className="text-sm" />
-                </a>
-              ))}
+              {
+}
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-gray-900">
-              Quick Links
-            </h4>
-            
-                <ul className="space-y-3">
-  {[
-    { label: 'Home', to: '/' },
-    
-    
-    
-    
-    { label: 'Registration Fees', to: '/registration-fees' },
-    { label: 'Online Registration', to: '/register' },
-    
-    
-   
-    
-    
-    { label: 'Contact Us', to: '/contact' },
-  ].map((item, i) => (
-    <li key={i}>
-      <Link
-        to={item.to}
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="text-gray-600 transition-colors flex items-center hover:text-[#45AAFF]"
-      >
-        <span
-          className="w-2 h-2 rounded-full mr-3"
-          style={{ backgroundColor: '#45AAFF' }}
-        />
-        {item.label}
-      </Link>
-    </li>
-  ))}
-</ul>
-
-          </div>
+          
 
           {/* Contact Info */}
           <div>
@@ -138,20 +67,20 @@ export default function Footer() {
                   icon: faEnvelope,
                   label: 'Email',
                   text: 'info@artticon2026.org',
-                  href: 'mailto:info@artticon2026.org',
+                  
                 },
                
                 {
                   icon: faPhone,
                   label: 'Phone',
                   text: '+91 8941005271',
-                  href: 'tel:+918941005271',
+              
                 },
                 {
                   icon: faPhone,
                   label: 'Phone',
                   text: '+91 9120780001',
-                  href: 'tel:+919120780001',
+             
                 },
                 {
                   icon: faLocationDot,
@@ -162,8 +91,8 @@ export default function Footer() {
                       AIIMS Rishikesh, Uttarakhand
                     </>
                   ),
-                  href:
-                    'https://www.google.com/maps/search/?api=1&query=Atal%20Bihari%20Vajpayee%20Auditorium%20AIIMS%20Rishikesh',
+                
+            
                 },
               ].map((item, i) => (
                 <div key={i} className="flex items-start space-x-3">

@@ -112,58 +112,6 @@ export const Hero = () => {
         </div>
       </section>
 
-     {/* {showPopup && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
-    <div className="relative bg-white max-w-lg w-full rounded-2xl shadow-2xl p-8">
-
-      <button
-        onClick={() => setShowPopup(false)}
-        className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-xl"
-      >
-        ×
-      </button>
-
-      <div className="text-sm leading-relaxed text-black space-y-4">
-
-        <p className="font-semibold">
-          Greetings from the ARTTICON 2026 Team!
-        </p>
-
-        <p>
-          First of all, thank you very much for your great support and enthusiastic response to the Early Bird Registration.
-        </p>
-
-        <p>
-          Considering the large number of requests received, the Organizing Committee has decided to extend the Early Bird Registration deadline for <span className="font-semibold">ARTTICON 2026 – Rishikesh</span> till <span className="font-semibold text-red-600">15th March 2026</span>.
-        </p>
-
-        <p>
-          We encourage all delegates to take advantage of this extended opportunity and register at the discounted fee.
-        </p>
-
-        <p className="font-semibold text-red-600">
-          Please note: No further extension will be provided.
-        </p>
-
-        <a
-          href="https://artticon2026.com/register"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block text-blue-700 font-medium underline"
-        >
-          🔗 https://artticon2026.com/register
-        </a>
-
-        <p className="pt-2">
-          Thank you<br />
-          <span className="font-semibold">ARTTICON 2026 Team</span>
-        </p>
-
-      </div>
-    </div>
-  </div>
-)}*/}
-        
     
     </>
   );

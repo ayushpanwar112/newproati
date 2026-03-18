@@ -85,21 +85,21 @@ export default function Navbar() {
 
   <div className="absolute top-full left-0 mt-3 w-56 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100  group-hover:visible transition-all duration-200">
     <a
-      href="/#organizing-committee"
+
       className="block px-4 py-3 text-gray-700 hover:bg-gray-100"
     >
       Organizing Committee
     </a>
 
     <a
-      href="/#welcome-message"
+     
       className="block px-4 py-3 text-gray-700 hover:bg-gray-100"
     >
       Welcome Message
     </a>
 
     <a
-      href="/brochure.pdf"
+  
       download
       className="block px-4 py-3 text-gray-700 hover:bg-gray-100"
     >
@@ -116,13 +116,13 @@ export default function Navbar() {
 
     <div className="absolute top-full left-0 mt-3 w-56 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
        <Link
-        to="/register"
+        
         className="block px-4 py-3 text-gray-700 hover:bg-gray-100"
       >
         Online Registration
       </Link>
       <Link
-        to="/registration-fees"
+        
         className="block px-4 py-3 text-gray-700 hover:bg-gray-100"
       >
         Registration Fees

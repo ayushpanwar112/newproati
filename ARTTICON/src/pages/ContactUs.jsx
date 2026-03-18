@@ -2,37 +2,17 @@
 
 import Background from "../assets/Bg.jpg";
 import Logo from "../assets/aims.png";
-import emailjs from "emailjs-com";
-import { useState } from "react";
+
+
 
 
 
 export default function Contact() {
-  const [loading, setLoading] = useState(false);
-  function sendEmail(e) {
-  e.preventDefault();
+ 
 
-  if (e.target.company.value !== "") return;
+  
 
-  setLoading(true);
-
-  emailjs
-    .sendForm(
-      "service_xmjx43g",
-      "template_0tsf2gc",
-      e.target,
-      "wRH4Z5bI3IwUsdczK"
-    )
-    .then(() => {
-      setLoading(false);
-      alert("Thank you. Your message has been sent.");
-      e.target.reset();
-    })
-    .catch(() => {
-      setLoading(false);
-      alert("Message failed. Please try again later.");
-    });
-}
+  
 
 
 
@@ -132,81 +112,15 @@ export default function Contact() {
       </p>
             </div>
 
-          {/* RIGHT — FORM */}
-<div className="relative pl-6 lg:border-l border-gray-200">
-
-  <h2 className="text-3xl font-serif font-bold mb-4">
-    Get in Touch
-  </h2>
-
-  <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-pink-500 mb-10" />
-
-  <form className="space-y-7" onSubmit={sendEmail}>
-
-    {/* Honeypot */}
-    <input type="text" name="company" className="hidden" />
-
-    <input
-      name="name"
-      required
-      className="w-full border-b py-2 focus:outline-none"
-      placeholder="Your Name"
-    />
-
-    <input
-      name="email"
-      type="email"
-      required
-      className="w-full border-b py-2 focus:outline-none"
-      placeholder="Your Email"
-    />
-
-    <input
-      name="mobile"
-      className="w-full border-b py-2 focus:outline-none"
-      placeholder="Mobile No"
-    />
-
-    <input
-      name="city"
-      className="w-full border-b py-2 focus:outline-none"
-      placeholder="City"
-    />
-
-    <input
-      name="subject"
-      className="w-full border-b py-2 focus:outline-none"
-      placeholder="Subject"
-    />
-
-    <textarea
-      name="message"
-      rows="4"
-      required
-      className="w-full border-b py-2 focus:outline-none"
-      placeholder="Message"
-    />
-
-    <button
-  type="submit"
-  disabled={loading}
-  className={`mt-10 w-full py-3 tracking-wide rounded-md transition 
-  ${loading 
-    ? "bg-gray-400 cursor-not-allowed" 
-    : "bg-gradient-to-r from-indigo-600 to-purple-600 hover:opacity-90 active:scale-95 text-white"}`}
->
-  {loading ? "Sending..." : "Send Message"}
-</button>
-
-
-  </form>
+    
 </div>
 
 
           </div>
         </div>
       </div>
-
+      )
+  }
 
 
         
@@ -220,7 +134,7 @@ export default function Contact() {
 
 
 
-  </div>
+
 
 
 
@@ -228,5 +142,5 @@ export default function Contact() {
   
       
   
-  )
-}
+  
+

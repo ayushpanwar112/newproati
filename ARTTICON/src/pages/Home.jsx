@@ -4,11 +4,11 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import { Hero } from '../components/Hero/Hero'
-import ConferenceScheduleSection from '../components/Hero/ConferenceScheduleSection'
-import { CountdownSection } from '../components/clock/CountdownSection'
 
 
-import img10 from '../assets/Gallery/img10.jpg'
+
+
+
 import visionImage from '../assets/vision.jpg'
 import AbstractImage from '../assets/abstract.jpg'
 import secretaryImg from '../assets/Secratery.jpg'
@@ -117,57 +117,7 @@ export default function Home() {
 
 
 
-    {/*<div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {[
-        {
-          name: "Dr. Priya Sharma",
-          role: "AI Research Director",
-          org: "IIT Delhi",
-        },
-        {
-          name: "Prof. James Wilson",
-          role: "Healthcare Innovation",
-          org: "Stanford University",
-        },
-        {
-          name: "Dr. Maria Santos",
-          role: "Medical Physics",
-          org: "Johns Hopkins",
-        },
-        {
-          name: "Dr. Rajesh Kumar",
-          role: "Radiation Oncology",
-          org: "AIIMS",
-        },
-        {
-          name: "Dr. Emily Chen",
-          role: "Clinical Research",
-          org: "Mayo Clinic",
-        },
-      ].map((speaker, i) => (
-        <div
-          key={i}
-          className="bg-white/90 backdrop-blur rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-6 text-center hover:-translate-y-1"
-        >
-          {/* Avatar */}
-         {/* <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-xl font-bold">
-            {speaker.name.charAt(0)}
-          </div>
-
-          <h3 className="text-lg font-bold text-gray-900">
-            {speaker.name}
-          </h3>
-
-          <p className="text-sm text-gray-700 mt-1">
-            {speaker.role}
-          </p>
-
-          <p className="text-sm font-semibold text-sky-600 mt-1">
-            {speaker.org}
-          </p>
-        </div>
-      ))}
-    </div>*/}
+    
   </div>
 </section>
 
@@ -277,6 +227,7 @@ export default function Home() {
           </p>
            <p className="mb-4">
             We look forward to welcoming you to Rishikesh
+            
           </p>
 
           <p className="mb-4">
@@ -315,12 +266,12 @@ export default function Home() {
 
 
 
-      <ConferenceScheduleSection />
- <CountdownSection/>
+ 
+
     <section
     id="brochure"
   className="py-20 bg-cover bg-center relative z-10"
-  style={{ backgroundImage: `url(${img10})` }}
+  
 >
   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 opacity-80 z-0 pointer-events-none"></div>
   <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">

@@ -42,23 +42,7 @@ export default function RegistrationPage() {
             </div>
           </div>
         </div>
-        {/*
-       Registration Stats
-        <div className="grid grid-cols-3 gap-6 mb-12 max-w-2xl mx-auto">
-          <div className="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl">
-            <div className="text-2xl font-bold text-teal-600">0</div>
-            <div className="text-sm text-gray-600">Registered</div>
-          </div>
-          <div className="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl">
-            <div className="text-2xl font-bold text-emerald-600">158</div>
-            <div className="text-sm text-gray-600">Spots Left</div>
-          </div>
-          <div className="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl">
-            <div className="text-2xl font-bold text-teal-700"></div>
-            <div className="text-sm text-gray-600">Days Left</div>
-          </div>
-        </div>
-*/}
+      
 
         <RegistrationForm />
 
