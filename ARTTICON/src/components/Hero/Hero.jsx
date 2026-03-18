@@ -112,7 +112,7 @@ export const Hero = () => {
         </div>
       </section>
 
-      {showPopup && (
+     {/* {showPopup && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
     <div className="relative bg-white max-w-lg w-full rounded-2xl shadow-2xl p-8">
 
@@ -162,7 +162,7 @@ export const Hero = () => {
       </div>
     </div>
   </div>
-)}
+)}*/}
         
     
     </>

@@ -442,14 +442,14 @@ export default function Navbar() {
 
         </div>
       </nav>
-<div className="w-full bg-yellow-600 text-white overflow-hidden">
+{/*<div className="w-full bg-yellow-600 text-white overflow-hidden">
   <div className="marquee">
     🚨 Early Bird Registration Extended till 15th March 2026 • 
     ARTTICON 2026 • 
     25th – 27th September 2026 • 
     Register Now to Avail Discounted Fees • 
   </div>
-</div>
+</div>*/}
     </div>
   )
 }

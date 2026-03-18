@@ -4,6 +4,8 @@ import Background from "../assets/Bg.jpg";
 
 
 export default function AbstractSubmision() {
+  const formLink = "https://docs.google.com/forms/d/e/1FAIpQLScMY9Yw6ciXkLIEw4YqTio9ghU1IwpDND0U_qj1-A7GOZbGVA/viewform?usp=header";
+
   return (
     <div className="bg-gray-100 min-h-screen">
 
@@ -22,48 +24,129 @@ export default function AbstractSubmision() {
         </h1>
       
       </div>
-      
       {/* MAIN CONTENT */}
-<div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-24">
+      <div className="max-w-4xl mx-auto px-4 py-12 space-y-14">
 
 
-        {/* COMING SOON CARD */}
-        <div className="relative overflow-hidden rounded-3xl bg-white shadow-xl border border-gray-100 p-6 sm:p-10 md:p-14
-">
+        {/* INTRO */}
+        <section>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4">
+            Submit Your Research
+          </h2>
 
-         
+          <p className="text-[15px] md:text-base leading-relaxed">
+            ARTTICON 2026 invites researchers, clinicians, academicians,
+            and students to submit original research abstracts for
+            presentation at the conference. Submitted abstracts will
+            undergo scientific review by the conference committee.
+          </p>
 
-          {/* top gradient line */}
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600" />
+          <p className="mt-4 text-[15px] md:text-base leading-relaxed">
+            Accepted abstracts will be included in the official
+            scientific program and presented as either oral or poster
+            presentations during the conference.
+          </p>
+        </section>
 
-          <div className="relative">
 
-            <h2 className="text-xl sm:text-2xl md:text-4xl font-semibold text-black-900 mb-6 font-serif whitespace-nowrap sm:whitespace-normal">
-              Submission Portal Opening Soon
+
+        {/* SUBMISSION INFO CARDS */}
+        <section className="grid md:grid-cols-2 gap-6">
+
+          <div className="bg-white border rounded-xl p-6">
+            <h3 className="font-semibold text-lg mb-2">
+              Who Can Submit
+            </h3>
+
+            <p className="text-[15px] md:text-base leading-relaxed">
+              Researchers, clinicians, postgraduate students, and
+              professionals involved in the field are encouraged
+              to submit their original work for consideration.
+            </p>
+          </div>
+
+
+          <div className="bg-white border rounded-xl p-6">
+            <h3 className="font-semibold text-lg mb-2">
+              Review Process
+            </h3>
+
+            <p className="text-[15px] md:text-base leading-relaxed">
+              All submissions will undergo a double-blind peer
+              review conducted by the scientific committee to
+              ensure quality and relevance.
+            </p>
+          </div>
+
+
+          <div className="bg-white border rounded-xl p-6">
+            <h3 className="font-semibold text-lg mb-2">
+              Presentation Types
+            </h3>
+
+            <p className="text-[15px] md:text-base leading-relaxed">
+              Accepted abstracts will be assigned either an
+              oral presentation or a poster presentation
+              based on reviewer evaluation.
+            </p>
+          </div>
+
+
+          <div className="bg-white border rounded-xl p-6">
+            <h3 className="font-semibold text-lg mb-2">
+              Important Note
+            </h3>
+
+            <p className="text-[15px] md:text-base leading-relaxed">
+              The submitting author will be considered the
+              presenting author and will be responsible for
+              presenting the research during the conference.
+            </p>
+          </div>
+
+        </section>
+
+
+
+        {/* SUBMISSION CARD */}
+        <section>
+
+          <div className="relative overflow-hidden rounded-3xl border border-white/40 bg-white/70 backdrop-blur-xl p-10 shadow-[0_20px_60px_rgba(0,0,0,0.08)] text-center">
+
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" />
+
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4">
+              Submit Abstract
             </h2>
 
-            <p className="text-black-700 leading-relaxed text-sm sm:text-base md:text-lg mb-8">
-              The online abstract submission system for ARTTICON 2026 is currently
-              under preparation. Authors will soon be able to submit their
-              research papers and posters through the official portal.
+            <p className="text-[15px] md:text-base leading-relaxed mb-6">
+              Click the button below to access the abstract
+              submission form and upload your research abstract.
+              Ensure that all required information and author
+              details are prepared before beginning the submission.
             </p>
 
-           <ul className="space-y-3 text-sm sm:text-base text-gray-700 list-disc pl-5">
-  <li>Submission guidelines are being finalized by the scientific committee.</li>
-  <li>Portal access will be announced shortly.</li>
-  <li>Important deadlines will be published here.</li>
-  <li>Template and submission instructions will be provided.</li>
-</ul>
+            <button
+              onClick={() => window.open(formLink, "_blank")}
+              className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white px-8 py-3 rounded-lg font-semibold shadow-md hover:scale-105 transition"
+            >
+              Submit Abstract
+            </button>
 
-
-          
-
-            <p className="mt-8 font-semibold text-black-600">
-              Stay connected for updates. The submission window will open soon.
+            <p className="mt-6 text-sm text-gray-600">
+              For formatting instructions and detailed requirements,
+              please refer to the <span className="font-semibold">
+              Abstract Guidelines</span> page.
             </p>
 
           </div>
-        </div>
+
+        </section>
+
+
+      </div>
+  
+       
 
         {/* CONTACT SUPPORT */}
         <div className="mt-10 sm:mt-14 md:mt-16 text-center">
@@ -83,6 +166,6 @@ export default function AbstractSubmision() {
         </div>
 
       </div>
-    </div>
+  
   );
 }

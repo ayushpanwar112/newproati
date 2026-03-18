@@ -110,7 +110,8 @@ export default function Home() {
   Organizing Committee details will be announced soon.
   <br />
   Please stay tuned for updates.
-</p> 
+</p>
+ 
   </div>
 </div>
 
@@ -217,14 +218,20 @@ export default function Home() {
           <p className="mb-4">
             Dear Colleagues and Esteemed Guests,
           </p>
+          <p className="mb-4">
+           Greetings from Rishikesh,
+          </p>
+
 
           <p className="mb-4">
-            It gives us immense pleasure to cordially invite you to{" "}
-            <strong>ARTTICON 2026</strong>, to be held from{" "}
-            <strong>25th to 27th September 2026</strong> at{" "}
-            <strong>AIIMS Rishikesh, Uttarakhand</strong>.
-          </p>
-          <p className="mb-4">
+            On behalf of the organizing committee of <strong>ARTTICON 2026</strong>,
+             it is indeed a great pleasure to invite you all to <strong>the</strong> 11th International & 30th Annual National Conference of
+              Association of Radiation Therapists and Technologists of India to be held at 
+            <strong>AIIMS Rishikesh, Uttarakhand</strong> from
+          <strong>25th to 27th September 2026</strong>.
+            
+  
+      
             We are delighted to introduce the theme of this year's conference:
           </p>
           <p className="mb-5 text-center font-semibold italic text-sky-700">
@@ -235,44 +242,41 @@ export default function Home() {
             ARTTICON 2026 is a prestigious national and international conference
             organized by the {" "}
             <strong>Association of Radiation Therapists and
-            Technologists of India (ARTTI)</strong>. The conference brings together eminent professionals, experts, and thought leaders from India and across the globe, fostering and 
-            intellectually stimulating environment that promotes advanced learning, meaningful Professional collaboration, and academic inspiration.
+            Technologists of India (ARTTI)</strong>. This conference brings together eminent professionals, experts, from India and across the globe,
+            to promotes advanced learning, meaningful Professional collaboration, and academic inspiration. The rapid advancement of technology in healthcare 
+            management, particularly for cancer patient, has revolutionized the application of radiation for diagnostic and therapeutic purpose.
+            This progress has significantly altered the concepts, procedures, and practices of radiation treatment, dosimetry and quality 
+            assurance within the discipline of Radiation Oncology.
+
           </p>
         
 
+          
           <p className="mb-4">
-            The scientific program will feature expert lectures and panel
-            discussions delivered by leading {" "}
-            <strong>Radiation Therapists, Medical
-            Physicists, and Radiation Oncologists</strong>, along with trade exhibitions
-            showcasing cutting-edge advancements in radiation therapy
-            technology and patient immobilization systems.
-          </p>
-          <p className="mb-4">
-            We are especially proud to host this conference in Uttarakhand for
-            the first time. Adding to this, Rishikesh—renowned as the {" "}
+            We are especially proud to host this conference in the state of <strong>Uttarakhand for
+            the first time.</strong> Rishikesh renownedly known as the {" "}
             <strong>“Yoga Capital of the
             World”</strong>—offers a unique blend of spirituality, culture, and
-            adventure. Nestled on the banks of the sacred Ganga, Rishikesh is renowned for its meditation centers,
+            adventure. Nestled on the banks of the sacred river Ganga, the city is celebrated for its meditation centers,
              iconic ashrams such as {" "}
             <strong>Parmarth Niketan</strong> and {" "}
             <strong>The Beatles Ashram</strong>, vibrant {" "}
             <strong> Ganga Aarti</strong> rituals, and ancient temples. 
              It also serves as a gateway to the {" "}
             <strong>Garhwal Himalayas</strong> and the {" "}
-            <strong> Char Dham pilgrimage</strong>, while offering adventure activities like rafting
+            <strong> Char Dham pilgrimage</strong>, while offering adventure activities such as rafting
             and bungee jumping. 
-            Landmarks such as {" "}
+            Landmark places including {" "}
             <strong>Laxman Jhula, Ram Jhula, and Janki Setu </strong> further enrich the visitor experience.
           </p>
            <p className="mb-4">
             We warmly invite you to join us at {" "}
-            <strong>ARTTICON 2026</strong> for an unforgettable academic and cultural journey. Your esteemed 
-            presence will greatly contribute to the success of this landmark event.
+            <strong>ARTTICON 2026</strong> and be part of an enriching, unforgettable academic and cultural journey. Your esteemed 
+            presence will greatly contribute to the success of this academic event.
 
           </p>
            <p className="mb-4">
-            We look forward to welcoming you to Rishikesh.
+            We look forward to welcoming you to Rishikesh
           </p>
 
           <p className="mb-4">

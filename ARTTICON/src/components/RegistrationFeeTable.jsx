@@ -7,11 +7,7 @@ export const RegistrationFeeTable = () => {
         <thead className="bg-gray-100">
           <tr>
             <th className="border px-4 py-3 font-semibold">CATEGORY</th>
-            <th className="border px-4 py-3 font-semibold">
-              EARLY REGISTRATION
-              <br />
-              <span className="text-xs font-normal">Up to 15th March</span>
-            </th>
+            
             <th className="border px-4 py-3 font-semibold">
               LATE REGISTRATION
               <br />
@@ -28,21 +24,21 @@ export const RegistrationFeeTable = () => {
         <tbody>
           <tr>
             <td className="border px-4 py-3 font-medium">ARTTI MEMBERS</td>
-            <td className="border px-4 py-3">₹3500</td>
+
             <td className="border px-4 py-3">₹4500</td>
             <td className="border px-4 py-3">₹5000</td>
           </tr>
 
           <tr>
             <td className="border px-4 py-3 font-medium">NON ARTTI MEMBERS</td>
-            <td className="border px-4 py-3">₹4500</td>
+            
             <td className="border px-4 py-3">₹5500</td>
             <td className="border px-4 py-3">₹6000</td>
           </tr>
 
           <tr>
             <td className="border px-4 py-3 font-medium">ASSOCIATE DELEGATES</td>
-            <td className="border px-4 py-3">₹3000</td>
+            
             <td className="border px-4 py-3">₹3500</td>
             <td className="border px-4 py-3">₹4000</td>
           </tr>
@@ -51,21 +47,21 @@ export const RegistrationFeeTable = () => {
             <td className="border px-4 py-3 font-medium">
               STUDENT (RADIATION THERAPIST)
             </td>
-            <td className="border px-4 py-3">₹2500</td>
+            
             <td className="border px-4 py-3">₹3000</td>
             <td className="border px-4 py-3">₹3500</td>
           </tr>
 
           <tr>
             <td className="border px-4 py-3 font-medium">SR.RT MEMBERS &gt; 60</td>
-            <td className="border px-4 py-3">₹2500</td>
+            
             <td className="border px-4 py-3">₹3000</td>
             <td className="border px-4 py-3">₹3500</td>
           </tr>
 
           <tr>
             <td className="border px-4 py-3 font-medium">OVERSEAS DELEGATES</td>
-            <td className="border px-4 py-3">$100</td>
+            
             <td className="border px-4 py-3">$150</td>
             <td className="border px-4 py-3">$200</td>
           </tr>
